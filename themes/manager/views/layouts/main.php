@@ -10,7 +10,7 @@
     <!--[if IE]><script src="<?php echo $this->module->assetsUrl; ?>/resources/scripts/excanvas.min.js"></script><![endif]-->
     <script src="<?php echo $this->module->assetsUrl; ?>/resources/scripts/jquery-ui-1.8.custom.min.js"></script>
     <script src="<?php echo $this->module->assetsUrl; ?>/resources/scripts/jquery.ui.selectmenu.js"></script>
-    <script src="<?php echo $this->module->assetsUrl; ?>/resources/scripts/tiny_mce/jquery.tinymce.js"></script>
+    <script src="/tinymce/tinymce.min.js"></script>
     <script src="<?php echo $this->module->assetsUrl; ?>/resources/scripts/smooth.js"></script>
     <script src="<?php echo $this->module->assetsUrl; ?>/resources/scripts/smooth.menu.js"></script>
     <script src="<?php echo $this->module->assetsUrl; ?>/resources/scripts/smooth.table.js"></script>
