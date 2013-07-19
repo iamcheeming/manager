@@ -17,4 +17,20 @@ class DefaultController extends DManagerController
         Yii::app()->user->logout();
         $this->redirect(Yii::app()->user->loginUrl);
     }
+
+    public function actionPost()
+    {
+        $username = Yii::app()->request->getPost('username');
+        $password = Yii::app()->request->getPost('password');
+        if (empty($username) || empty($password)) {
+            Yii::app()->user->setFlash('error', '用户名和密码不能为空。');
+            $this->redirect(array('default/signin'));
+        }
+        $identity = new UserIdentity($username, $password);
+        if ($rest = Yii::app()->user->login($identity)) {
+            $this->redirect(array('default/index'));
+        }
+        Yii::app()->user->setFlash('error', '用户名或密码不正确。');
+        $this->redirect(array('default/signin'));
+    }
 }

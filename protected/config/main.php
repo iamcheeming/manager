@@ -4,6 +4,7 @@ return array(
 	'name' => 'My Web Application',
     'theme' => 'classic',
     'defaultController' => 'front/default',
+    'timeZone' => 'Asia/Shanghai',
 
 	'preload' => array('log'),
 
@@ -17,14 +18,16 @@ return array(
         'front',
 	),
 
-	// application components
 	'components' => array(
 		'user' => array(
             'class' => 'application.components.WebUser',
 			'allowAutoLogin' => true,
             'loginUrl' => array('user/signin'),
 		),
-		'urlManager' => array(
+        'session' => array(
+            'timeout' => 60 * 24,
+        ),
+        'urlManager' => array(
 			'urlFormat' => 'path',
             'showScriptName' => false,
 			'rules' => include dirname(__FILE__) . DIRECTORY_SEPARATOR . 'routes.php',

@@ -13,4 +13,13 @@ class WebUser extends CWebUser
             return false;
         }
     }
+
+    public function login($identity, $duration = 0)
+    {
+        if (!$identity->getIsAuthenticated()) {
+            return false;
+        }
+        parent::login($identity, $duration);
+        return true;
+    }
 }

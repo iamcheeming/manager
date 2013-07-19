@@ -36,6 +36,7 @@
         <div class="corner tl"></div>
         <div class="corner tr"></div>
     </div>
+    <?php if (Yii::app()->user->hasFlash('error')): ?>
     <div class="messages">
         <div id="message-error" class="message message-error">
             <div class="image">
@@ -43,13 +44,14 @@
             </div>
             <div class="text">
                 <h6>Error Message</h6>
-                <span>This is the error message.</span>
+                <span><?php echo Yii::app()->user->getFlash('error'); ?></span>
             </div>
             <div class="dismiss">
                 <a href="#message-error"></a>
             </div>
         </div>
     </div>
+    <?php endif; ?>
     <div class="inner">
         <form action="<?php echo Yii::app()->urlManager->createUrl('manager/default/post'); ?>" method="post">
             <div class="form">
@@ -60,7 +62,7 @@
                             <label for="username">Username:</label>
                         </div>
                         <div class="input">
-                            <input type="text" id="username" name="username" size="40" value="请输入用户名" class="focus" />
+                            <input type="text" id="username" name="username" size="40" value="" class="focus" />
                         </div>
                     </div>
                     <div class="field">

@@ -1,6 +1,6 @@
 <?php
 return CMap::mergeArray(
-	require(dirname(__FILE__) . '/main.php'),
+	require dirname(__FILE__) . '/main.php',
 	array(
 		'components' => array(
 			'fixture' => array(
@@ -21,13 +21,16 @@ return CMap::mergeArray(
                 'routes' => array(
                     array(
                         'class' => 'CFileLogRoute',
-                        'levels' => 'error, warning',
+                        'levels' => 'trace, info',
+                        'categories' => 'system.*',
+                    ),
+                    array(
+                        'class' => 'CProfileLogRoute',
+                        'levels' => 'trace, info, profile, error, warning',
                     ),
                     array(
                         'class' => 'CWebLogRoute',
-                    ),
-                    array(
-                        'class' => 'CProfileLogRoute',    
+                        'levels' => 'trace, info, profile, error, warning',
                     ),
                 ),
             ),
