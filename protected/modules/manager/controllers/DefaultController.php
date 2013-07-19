@@ -24,12 +24,14 @@ class DefaultController extends DManagerController
         $username = $request->getPost('username');
         $password = $request->getPost('password');
         $remember = $request->getPost('remember');
+
         if (empty($username) || empty($password)) {
             Yii::app()->user->setFlash('error', '用户名和密码不能为空。');
             $this->redirect(array('default/signin'));
         }
         $identity = new UserIdentity($username, $password);
-        if (Yii::app()->user->login($identity, $remember ? 60 * 12 : 0)) {
+        if ($identity->authenticate()) {
+            Yii::app()->user->login($identity, $remember ? 60 * 12 : 0);
             $this->redirect(array('default/index'));
         }
         Yii::app()->user->setFlash('error', '用户名或密码不正确。');

@@ -38,27 +38,21 @@ $(document).ready(function () {
         }
     });
 
-    $("#menu li[class~=collapsible]").click(function () {
+    $("#menu li a[class~=collapsible]").click(function () {
         var element = $(this);
 
-        element.children("a:first-child").each(function () {
-            var child = $(this);
+        if (element.attr("class") == "collapsible plus") {
+            element.attr("class", "collapsible minus");
+        } else {
+            element.attr("class", "collapsible plus");
+        }
 
-            if (child.attr("class") == "plus") {
-                child.attr("class", "minus");
-            } else {
-                child.attr("class", "plus");
-            }
-        });
+        var list = element.next();
 
-        element.children("ul").each(function () {
-            var child = $(this);
-
-            if (child.attr("class") == "collapsed") {
-                child.attr("class", "expanded");
-            } else {
-                child.attr("class", "collapsed");
-            }
-        });
+        if (list.attr("class") == "collapsed") {
+            list.attr("class", "expanded");
+        } else {
+            list.attr("class", "collapsed");
+        }
     });
 });

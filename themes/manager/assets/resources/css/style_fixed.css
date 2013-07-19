@@ -1,23 +1,23 @@
 /* -----------------------------------------------------------
 	header
------------------------------------------------------------ */ 
+----------------------------------------------------------- */
 
 #header
 {
-	margin: 0 auto;
-	padding: 10px 0 0 0;
-	background: #b0b0b0 url("../../resources/images/header_background.png") repeat;
+    margin: 0 auto;
+    padding: 10px 0 0 0;
+    background: #b0b0b0 url("../../resources/images/header_background.png") repeat;
 }
 
 /* -----------------------------------------------------------
 	header -> outer
------------------------------------------------------------ */ 
+----------------------------------------------------------- */
 
 #header #header-outer
 {
-	margin: 0 auto;
-	padding: 0;
-	width: 960px;
+    margin: 0 auto;
+    padding: 0;
+    width: 960px;
 }
 
 /* -----------------------------------------------------------
@@ -26,67 +26,67 @@
 
 #header #header-inner #quick ul
 {
-	left: 0;
+    left: 0;
 }
 
-#header #header-inner #quick li ul ul 
+#header #header-inner #quick li ul ul
 {
-	left: 200px;
+    left: 200px;
 }
 
 /* -----------------------------------------------------------
 	content
------------------------------------------------------------ */ 
+----------------------------------------------------------- */
 
-#content 
+#content
 {
-	margin: 10px auto 10px auto;
-	width: 960px;
-	background: url("../../resources/images/content_fixed.png") repeat-y top left;
-	clear: both;
-	overflow: hidden;	
+    margin: 10px auto 10px auto;
+    width: 960px;
+    background: url("../../resources/images/content_fixed.png") repeat-y top left;
+    clear: both;
+    overflow: hidden;
 }
 
 /* -----------------------------------------------------------
 	content -> left
------------------------------------------------------------ */ 
+----------------------------------------------------------- */
 
 #content #left
 {
-	left: auto;
-	width: 210px;
-	position: relative;
-	float: left;
+    left: auto;
+    width: 210px;
+    position: relative;
+    float: left;
 }
 
 /* -----------------------------------------------------------
 	content -> left -> menu
------------------------------------------------------------ */ 
+----------------------------------------------------------- */
 
 #content #left #menu
 {
-	margin: 5px 10px 0 10px;
+    margin: 5px 10px 0 10px;
 }
 
 /* -----------------------------------------------------------
 	content -> left -> date picker
------------------------------------------------------------ */ 
+----------------------------------------------------------- */
 
 #content #left #date-picker
 {
-	margin: 5px 10px 0 10px;
+    margin: 5px 10px 0 10px;
 }
 
 /* -----------------------------------------------------------
 	content -> right
------------------------------------------------------------ */ 
+----------------------------------------------------------- */
 
 #content #right
 {
-	margin: -10px 0 0 10px;
-	width: 740px;
-	float: left;
-	clear: none;
+    margin: -10px 0 0 10px;
+    width: 740px;
+    float: left;
+    clear: none;
 }
 
 /* -----------------------------------------------------------
@@ -95,16 +95,16 @@
 
 #content div.box div.form div.fields div.field div.label
 {
-	left: 0;
-	width: 200px;
-	position: relative;
-	float: left;
+    left: 0;
+    width: 200px;
+    position: relative;
+    float: left;
 }
 
 #content div.box-left div.form div.fields div.field div.label,
 #content div.box-right div.form div.fields div.field div.label
 {
-	float: none;
+    float: none;
 }
 
 /* -----------------------------------------------------------
@@ -113,30 +113,48 @@
 
 #content div.box div.form div.fields div.field div.input
 {
-	margin: 0;
-	float: left;
+    margin: 0;
+    float: left;
 }
 
 #content div.box div.form div.fields div.field div.input input.small
 {
-	width: 180px;	
+    width: 180px;
+}
+
+#content div.box-left div.form div.fields div.field div.input input.small,
+#content div.box-right div.form div.fields div.field div.input input.small
+{
+    width: 180px;
 }
 
 #content div.box div.form div.fields div.field div.input input.medium
 {
-	width: 300px;	
+    width: 300px;
+}
+
+#content div.box-left div.form div.fields div.field div.input input.medium,
+#content div.box-right div.form div.fields div.field div.input input.medium
+{
+    width: 236px;
 }
 
 #content div.box div.form div.fields div.field div.input input.large
 {
-	width: 479px;	
+    width: 479px;
 }
 
-#content div.box-left div.form div.fields div.field div.input input,
-#content div.box-right div.form div.fields div.field div.input input
+#content div.box-left div.form div.fields div.field div.input input.large,
+#content div.box-left div.form div.fields div.field div.input input.large
 {
-	width: 307px;
+    width: 307px;
 }
+
+#content div.box-left div.form div.fields div.field div.input input.date
+{
+    width: 180px;
+}
+
 
 /* -----------------------------------------------------------
 	content -> right -> forms -> textarea
@@ -144,14 +162,13 @@
 
 #content div.box div.form div.fields div.field div.textarea
 {
-	margin: 0;
-	float: left;
+    margin: 0;
+    float: left;
 }
 
-#content div.box div.form div.fields div.field div.textarea textarea,
 #content div.box div.form div.fields div.field div.textarea textarea
 {
-	width: 301px;
+    width: 301px;
 }
 
 /* -----------------------------------------------------------
@@ -160,8 +177,8 @@
 
 #content div.box div.form div.fields div.field div.select
 {
-	margin: 0;
-	float: left;
+    margin: 0;
+    float: left;
 }
 
 /* -----------------------------------------------------------
@@ -170,8 +187,8 @@
 
 #content div.box div.form div.fields div.field div.checkboxes
 {
-	margin: 0;
-	float: left;
+    margin: 0;
+    float: left;
 }
 
 /* -----------------------------------------------------------
@@ -180,8 +197,8 @@
 
 #content div.box div.form div.fields div.field div.radios
 {
-	margin: 0;
-	float: left;
+    margin: 0;
+    float: left;
 }
 
 /* -----------------------------------------------------------
@@ -190,12 +207,12 @@
 
 #content div.box table td.selected
 {
-	width: 5%;
+    width: 5%;
 }
 
 #content div.box table td.date
 {
-	width: 30%;
+    width: 30%;
 }
 
 /* -----------------------------------------------------------
@@ -204,11 +221,11 @@
 
 #footer
 {
-	margin: 0 auto;
-	width: 960px;
+    margin: 0 auto;
+    width: 960px;
 }
 
 #footer p
 {
-	margin: 0 10px 0 10px;
+    margin: 0 10px 0 10px;
 }

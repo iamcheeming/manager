@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>管理系统</title>
+    <title><?php echo $this->pageTitle; ?></title>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="<?php echo $this->module->assetsUrl; ?>/resources/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo $this->module->assetsUrl; ?>/resources/css/style.css" media="screen" />
@@ -21,7 +21,7 @@
     $(function () {
         $("#date-picker").datepicker();
 
-        // $("#box-tabs, #box-left-tabs").tabs();
+        $("#box-tabs, #box-left-tabs").tabs();
     });
     </script>
 </head>

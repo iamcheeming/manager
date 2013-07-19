@@ -8,24 +8,24 @@ $(document).ready(function () {
     var memory = [[1, 356], [2, 345], [3, 452], [4, 345], [5, 325], [6, 424], [7, 478], [8, 464], [9, 558], [10, 443], [11, 562], [12, 535], [13, 342], [14, 348], [15, 402]];
 
     var plot = $.plot($("#sales"), [
-		{ label: "Monitors", data: monitors },
-		{ label: "Memory", data: memory }
-	], {
-		lines: {
-			show: true
-		},
-		points: {
-			show: true
-		},
-		grid: {
-			backgroundColor: '#fffaff',
-			hoverable: true,
-			clickable: true
-		},
-		legend: {
-			show: false
-		}
-	});
+        { label: "Monitors", data: monitors },
+        { label: "Memory", data: memory }
+    ], {
+        lines: {
+            show: true
+        },
+        points: {
+            show: true
+        },
+        grid: {
+            backgroundColor: '#fffaff',
+            hoverable: true,
+            clickable: true
+        },
+        legend: {
+            show: false
+        }
+    });
 
     function showTooltip(x, y, contents) {
         $('<div id="tooltip">' + contents + '</div>').css({

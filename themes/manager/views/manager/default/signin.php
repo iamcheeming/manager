@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>管理系统</title>
+    <title><?php echo $this->pageTitle; ?></title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="<?php echo $this->module->assetsUrl; ?>/resources/css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo $this->module->assetsUrl; ?>/resources/css/style.css" media="screen" />
-    <link id="color" rel="stylesheet" type="text/css" href="<?php echo $this->module->assetsUrl; ?>/resources/css/colors/blue.css" />
-    <script src="<?php echo $this->module->assetsUrl; ?>/resources/scripts/jquery-1.7.min.js"></script>
-    <script src="<?php echo $this->module->assetsUrl; ?>/resources/scripts/jquery-ui-1.8.custom.min.js"></script>
-    <script src="<?php echo $this->module->assetsUrl; ?>/resources/scripts/smooth.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->assetsUrl; ?>/resources/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->assetsUrl; ?>/resources/css/style.css" media="screen" />
+    <link id="color" rel="stylesheet" type="text/css" href="<?php echo $this->assetsUrl; ?>/resources/css/colors/blue.css" />
+    <script src="<?php echo $this->assetsUrl; ?>/resources/scripts/jquery-1.6.4.min.js"></script>
+    <script src="<?php echo $this->assetsUrl; ?>/resources/scripts/jquery-ui-1.8.16.custom.min.js"></script>
+    <script src="<?php echo $this->assetsUrl; ?>/resources/scripts/smooth.js"></script>
     <script>
-    $(function () {
+    $(document).ready(function () {
         $("input.focus").focus(function () {
             if (this.value == this.defaultValue) {
                 this.value = "";
@@ -40,7 +40,7 @@
     <div class="messages">
         <div id="message-error" class="message message-error">
             <div class="image">
-                <img src="<?php echo $this->module->assetsUrl; ?>/resources/images/icons/error.png" alt="Error" height="32" />
+                <img src="<?php echo $this->assetsUrl; ?>/resources/images/icons/error.png" alt="Error" height="32" />
             </div>
             <div class="text">
                 <h6>Error Message</h6>
@@ -55,7 +55,6 @@
     <div class="inner">
         <form action="<?php echo Yii::app()->urlManager->createUrl('manager/default/post'); ?>" method="post">
             <div class="form">
-                <!-- fields -->
                 <div class="fields">
                     <div class="field">
                         <div class="label">
@@ -83,11 +82,9 @@
                         <input type="submit" value="Sign In" />
                     </div>
                 </div>
-                <!-- end fields -->
             </div>
         </form>
     </div>
-    <!-- end login -->
 </div>
 </body>
 </html>

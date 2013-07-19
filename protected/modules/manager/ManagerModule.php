@@ -20,6 +20,7 @@ class ManagerModule extends CWebModule
             'manager.models.*',
         ));
         Yii::app()->theme = 'manager';
+        Yii::app()->name = 'Manager System';
         Yii::app()->setComponents(array(
             'user' => array(
                 'class' => 'application.modules.manager.components.WebUser',
@@ -32,15 +33,15 @@ class ManagerModule extends CWebModule
     public function beforeControllerAction($controller, $action)
     {
         if (parent::beforeControllerAction($controller, $action)) {
-//            if ($controller->id == 'default' && $action->id == 'signin') {
-//                if (!Yii::app()->user->isGuest) {
-//                    $controller->redirect(array('default/index'));
-//                }
-//            } else {
-//                if (Yii::app()->user->isGuest) {
-//                    $controller->redirect(Yii::app()->user->loginUrl);
-//                }
-//            }
+            if ($controller->id == 'default' && $action->id != 'index') {
+                if ($action->id == 'signin' && !Yii::app()->user->isGuest) {
+                    $controller->redirect(array('default/index'));
+                }
+            } else {
+                if (Yii::app()->user->isGuest) {
+                    $controller->redirect(Yii::app()->user->loginUrl);
+                }
+            }
             // 验证角色
             return true;
         } else {
