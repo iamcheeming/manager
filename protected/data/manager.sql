@@ -3,15 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
-<<<<<<< HEAD
--- 生成日期: 2013 年 07 月 19 日 21:27
--- 服务器版本: 5.5.29-log
--- PHP 版本: 5.3.20
-=======
--- 生成日期: 2013 年 07 月 22 日 01:02
+-- 生成日期: 2013 年 07 月 22 日 23:37
 -- 服务器版本: 5.6.12
 -- PHP 版本: 5.5.0
->>>>>>> 94017a0... commited
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -55,8 +49,6 @@ INSERT INTO `tbl_admin` (`id`, `username`, `password`, `nick_name`, `group_id`, 
 -- --------------------------------------------------------
 
 --
-<<<<<<< HEAD
-=======
 -- 表的结构 `tbl_article`
 --
 
@@ -78,7 +70,6 @@ CREATE TABLE IF NOT EXISTS `tbl_article` (
 -- --------------------------------------------------------
 
 --
->>>>>>> 94017a0... commited
 -- 表的结构 `tbl_category`
 --
 
@@ -88,10 +79,6 @@ CREATE TABLE IF NOT EXISTS `tbl_category` (
   `route` varchar(48) NOT NULL,
   `sortnum` smallint(6) NOT NULL,
   `name` varchar(16) NOT NULL,
-<<<<<<< HEAD
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-=======
   `pic` varchar(48) NOT NULL,
   `max_level` tinyint(1) unsigned NOT NULL,
   `intro` varchar(32) NOT NULL,
@@ -107,7 +94,6 @@ CREATE TABLE IF NOT EXISTS `tbl_category` (
 INSERT INTO `tbl_category` (`id`, `pid`, `route`, `sortnum`, `name`, `pic`, `max_level`, `intro`, `has_sub`) VALUES
 (1, 0, '', 10, '关于我们', '', 3, '', 0),
 (2, 0, '', 20, '组织架构', '', 3, '', 0);
->>>>>>> 94017a0... commited
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
