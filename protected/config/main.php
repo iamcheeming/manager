@@ -9,7 +9,7 @@ return array(
 	'preload' => array('log'),
 
 	'import' => array(
-		'application.models.*',
+		// 'application.models.*',
 		'application.components.*',
 	),
 

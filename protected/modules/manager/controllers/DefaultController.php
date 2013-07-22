@@ -20,14 +20,16 @@ class DefaultController extends DManagerController
 
     public function actionPost()
     {
-        $username = Yii::app()->request->getPost('username');
-        $password = Yii::app()->request->getPost('password');
+        $request = Yii::app()->request;
+        $username = $request->getPost('username');
+        $password = $request->getPost('password');
+        $remember = $request->getPost('remember');
         if (empty($username) || empty($password)) {
             Yii::app()->user->setFlash('error', '用户名和密码不能为空。');
             $this->redirect(array('default/signin'));
         }
         $identity = new UserIdentity($username, $password);
-        if ($rest = Yii::app()->user->login($identity)) {
+        if (Yii::app()->user->login($identity, $remember ? 60 * 12 : 0)) {
             $this->redirect(array('default/index'));
         }
         Yii::app()->user->setFlash('error', '用户名或密码不正确。');

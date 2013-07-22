@@ -23,6 +23,7 @@ class ManagerModule extends CWebModule
         Yii::app()->setComponents(array(
             'user' => array(
                 'class' => 'application.modules.manager.components.WebUser',
+                'allowAutoLogin' => true,
                 'loginUrl' => array('default/signin'),
             ),
         ));
