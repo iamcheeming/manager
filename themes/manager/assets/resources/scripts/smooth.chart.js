@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
     $('#sales').css({
         height: '200px',
         width: 'auto'

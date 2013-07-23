@@ -10,7 +10,7 @@ function set_tr_class(element, selected) {
     }
 }
 
-$(document).ready(function () {
+$(function () {
     /* checks all the checkboxes within a table */
     $("table input[class=checkall]").live("click", function (event) {
         var checked = $(this).attr("checked");

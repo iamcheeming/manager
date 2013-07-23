@@ -1,7 +1,7 @@
 /* path to the stylesheets for the color picker */
 var style_path = "resources/css/colors";
 
-$(document).ready(function () {
+$(function () {
     /* messages fade away when dismiss is clicked */
     $(".message > .dismiss > a").live("click", function (event) {
         var value = $(this).attr("href");

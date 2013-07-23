@@ -12,6 +12,6 @@ function quick() {
     });
 }
 
-$(document).ready(function () {
+$(function () {
     quick();
 });

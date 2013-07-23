@@ -32,7 +32,22 @@ class CategoryController extends DManagerController
     }
 
     public function actionDel()
-    {}
+    {
+        $id = Yii::app()->request->getQuery('id');
+        if ($id < 1) {
+            $this->redirect(Yii::app()->request->urlReferrer);
+        }
+        $model = Category::model()->findByPk($id);
+        if (!$model) {
+            $this->redirect(Yii::app()->request->urlReferrer);
+        }
+        if ($model->has_sub) {
+            Yii::app()->user->setFlash('error', '先删除子类');
+        } else {
+            $model->delete();
+        }
+        $this->redirect(array('index'));
+    }
 
     public function actionForm()
     {
@@ -57,6 +72,7 @@ class CategoryController extends DManagerController
             $model->route = '';
             $model->pic = '';
             $model->intro = '';
+            $model->has_sub = 0;
         }
         $model->sortnum = $sortnum;
         $model->name = $name;

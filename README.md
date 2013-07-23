@@ -1,4 +1,0 @@
-manager
-=======
-
-php manager system

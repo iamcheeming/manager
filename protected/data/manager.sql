@@ -48,26 +48,6 @@ INSERT INTO `tbl_admin` (`id`, `username`, `password`, `nick_name`, `group_id`, 
 
 -- --------------------------------------------------------
 
---
--- 表的结构 `tbl_article`
---
-
-CREATE TABLE IF NOT EXISTS `tbl_article` (
-  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-  `category_id` smallint(5) unsigned NOT NULL,
-  `sortnum` mediumint(9) NOT NULL,
-  `title` varchar(24) NOT NULL,
-  `pic` varchar(48) NOT NULL,
-  `link` varchar(64) NOT NULL,
-  `intro` varchar(256) NOT NULL,
-  `content` varchar(10000) NOT NULL,
-  `created_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `modified_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  KEY `ind_category_id_sortnum` (`category_id`,`sortnum`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
 
 --
 -- 表的结构 `tbl_category`
@@ -95,6 +75,26 @@ INSERT INTO `tbl_category` (`id`, `pid`, `route`, `sortnum`, `name`, `pic`, `max
 (1, 0, '', 10, '关于我们', '', 3, '', 0),
 (2, 0, '', 20, '组织架构', '', 3, '', 0);
 
+--
+-- 表的结构 `tbl_article`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_article` (
+  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `category_id` smallint(5) unsigned NOT NULL,
+  `sortnum` mediumint(9) NOT NULL,
+  `title` varchar(24) NOT NULL,
+  `pic` varchar(48) NOT NULL,
+  `link` varchar(64) NOT NULL,
+  `intro` varchar(256) NOT NULL,
+  `content` varchar(10000) NOT NULL,
+  `created_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `ind_category_id_sortnum` (`category_id`,`sortnum`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
