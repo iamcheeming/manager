@@ -18,7 +18,9 @@ $func = function ($rows) use (&$func) {
             endif;
             echo '<a href="javascript:;" class="collapsible minus">', $item['name'], '</a>',
                 '<ul id="whatever" class="expanded">',
-                '<li><a href="', Yii::app()->urlManager->createUrl('manager/subCategory/index', array('cid' => $item['id'])), '">栏目管理</a><a href="', Yii::app()->urlManager->createUrl('manager/subCategory/add', array('cid' => $item['id'])), '">添加</a></li>';
+                '<li>',
+                '<a href="', Yii::app()->urlManager->createUrl('manager/nav/index', array('pid' => $item['id'])), '">栏目管理</a>',
+                '<a href="', Yii::app()->urlManager->createUrl('manager/nav/add', array('pid' => $item['id'])), '">添加</a></li>';
             $func($item['_child']);
             echo '</ul></li>';
         else:
@@ -27,38 +29,33 @@ $func = function ($rows) use (&$func) {
             else:
                 echo '<li>';
             endif;
-            echo '<a href="', Yii::app()->createUrl('manager/article/add', array('cid' => $item['id'])), '">', $item['name'], '</a></li>';
+            echo '<a href="', Yii::app()->createUrl('manager/article/index', array('cid' => $item['id'])), '">', $item['name'], '</a></li>';
         endif;
     endforeach;
 };
 
 foreach ($rows as $row):
-    $isSelected = false;
+    $isSelected = true;
 ?>
-<h6 id="h-menu-bar-<?php echo $row['id']; ?>"<?php echo $isSelected ? ' class="selected"' : ''; ?>>
+<h6 id="h-menu-bar-<?php echo $row['id']; ?>" class="selected">
     <a href="#bar-<?php echo $row['id']; ?>"><span><?php echo $row['name']; ?></span></a>
 </h6>
-<ul id="menu-bar-<?php echo $row['id']; ?>" class="<?php echo $isSelected ? 'opened' : 'closed'; ?>">
-    <li><a href="<?php echo $urlManager->createUrl('manager/subCategory/add', array('cid' => $row['id'])); ?>">添加栏目</a></li>
-    <li><a href="<?php echo $urlManager->createUrl('manager/subCategory/index', array('cid' => $row['id'])); ?>">栏目管理</a></li>
+<ul id="menu-bar-<?php echo $row['id']; ?>" class="opened">
+    <li>
+        <a href="<?php echo $urlManager->createUrl('manager/nav/index', array('pid' => $row['id'])); ?>">栏目管理</a>
+        <a href="<?php echo $urlManager->createUrl('manager/nav/add', array('pid' => $row['id'])); ?>" style="background: none;">添加</a>
+    </li>
     <?php if (isset($row['_child'])) $func($row['_child']); ?>
 </ul>
-<?php
-endforeach;
-
-$isSelected = false;
-if ($controllerId == 'category'):
-    $isSelected = true;
-endif;
-?>
-<h6 id="h-menu-bar-100"<?php echo $isSelected ? ' class="selected"' : ''; ?>>
+<?php endforeach; ?>
+<h6 id="h-menu-bar-100" class="selected">
     <a href="#bar-100"><span>系统初始化</span></a>
 </h6>
-<ul id="menu-bar-100" class="<?php echo $isSelected ? 'opened' : 'closed'; ?>">
-    <li<?php if ($actionId == 'add') echo ' class="selected"'; ?>>
+<ul id="menu-bar-100" class="opened">
+    <li>
         <a href="<?php echo $urlManager->createUrl('manager/category/add'); ?>">添加分类</a>
     </li>
-    <li class="<?php if ($actionId == 'index') echo 'selected '; ?>last">
-        <a href="<?php echo $urlManager->createUrl('manager/category'); ?>">栏目分类</a>
+    <li class="last">
+        <a href="<?php echo $urlManager->createUrl('manager/category/index'); ?>">栏目分类</a>
     </li>
 </ul>

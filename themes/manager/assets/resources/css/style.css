@@ -2086,6 +2086,21 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
     text-align: center;
 }
 
+#content div.box table td.center
+{
+    text-align: center;
+}
+
+#content div.box table td.w10
+{
+    width: 10%;
+}
+
+#content div.box table td.w20
+{
+    width: 20%;
+}
+
 /* -----------------------------------------------------------
 	content -> right -> box / table action
 ----------------------------------------------------------- */

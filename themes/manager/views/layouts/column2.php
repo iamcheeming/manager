@@ -24,7 +24,6 @@
             <?php $this->widget('MenuWidget'); ?>
 
         </div>
-        <div id="date-picker"></div>
     </div>
     <div id="right">
         <?php echo $content; ?>
