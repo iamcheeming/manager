@@ -654,6 +654,11 @@ div.color a.greyblue
     font-weight: bold;
 }
 
+#content #left #menu li.collapsible a.lnav
+{
+    margin: 0 0 0 16px;
+}
+
 #content #left #menu li.collapsible a.plus
 {
     margin: 0;
@@ -1463,6 +1468,16 @@ div.form div.fields div.field div.input input
     color: #000000;
     font-family: Lucida Grande, Verdana, Lucida Sans Regular, Lucida Sans Unicode, Arial, sans-serif;
     font-size: 11px;
+}
+
+div.form div.fields div.field div.input label
+{
+    margin-right: 8px;
+}
+
+div.form div.fields div.field div.input label input
+{
+    float: none;
 }
 
 .ui-dialog div.form div.fields div.field div.input input

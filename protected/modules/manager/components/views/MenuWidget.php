@@ -10,7 +10,7 @@ $func = function ($rows) use (&$func) {
     foreach ($rows as $item):
         ++$i;
         if ($i == $count) $last = true;
-        if (isset($item['_child']) && is_array($item['_child'])):
+        if ($item['has_sub']):
             if ($last):
                 echo '<li class="collapsible last">';
             else:
@@ -19,9 +19,8 @@ $func = function ($rows) use (&$func) {
             echo '<a href="javascript:;" class="collapsible minus">', $item['name'], '</a>',
                 '<ul id="whatever" class="expanded">',
                 '<li>',
-                '<a href="', Yii::app()->urlManager->createUrl('manager/nav/index', array('pid' => $item['id'])), '">栏目管理</a>',
-                '<a href="', Yii::app()->urlManager->createUrl('manager/nav/add', array('pid' => $item['id'])), '">添加</a></li>';
-            $func($item['_child']);
+                '<a href="', Yii::app()->urlManager->createUrl('manager/nav/index', array('pid' => $item['id'])), '">管理栏目</a></li>';
+            if (isset($item['_child']) && is_array($item['_child'])) $func($item['_child']);
             echo '</ul></li>';
         else:
             if ($last):
@@ -43,18 +42,22 @@ foreach ($rows as $row):
 <ul id="menu-bar-<?php echo $row['id']; ?>" class="opened">
     <li>
         <a href="<?php echo $urlManager->createUrl('manager/nav/index', array('pid' => $row['id'])); ?>">栏目管理</a>
-        <a href="<?php echo $urlManager->createUrl('manager/nav/add', array('pid' => $row['id'])); ?>" style="background: none;">添加</a>
     </li>
     <?php if (isset($row['_child'])) $func($row['_child']); ?>
 </ul>
 <?php endforeach; ?>
 <h6 id="h-menu-bar-100" class="selected">
-    <a href="#bar-100"><span>系统初始化</span></a>
+    <a href="#bar-100"><span>系统管理</span></a>
 </h6>
 <ul id="menu-bar-100" class="opened">
-    <li>
-        <a href="<?php echo $urlManager->createUrl('manager/category/add'); ?>">添加分类</a>
+    <li class="last">
+        <a href="<?php echo $urlManager->createUrl('manager/admin/index'); ?>">管理员</a>
     </li>
+</ul>
+<h6 id="h-menu-bar-101" class="selected">
+    <a href="#bar-101"><span>系统初始化</span></a>
+</h6>
+<ul id="menu-bar-101" class="opened">
     <li class="last">
         <a href="<?php echo $urlManager->createUrl('manager/category/index'); ?>">栏目分类</a>
     </li>

@@ -17,6 +17,7 @@ class CategoryController extends DManagerController
             'sortnum' => Category::model()->getMaxSortnum(),
             'max_level' => 4,
             'name' => '',
+            'has_alter' => 1,
         );
         $this->render('form', array('record' => $record));
     }
@@ -31,24 +32,6 @@ class CategoryController extends DManagerController
         $this->render('form', array('record' => $record));
     }
 
-    public function actionDel()
-    {
-        $id = Yii::app()->request->getQuery('id');
-        if ($id < 1) {
-            $this->redirect(Yii::app()->request->urlReferrer);
-        }
-        $model = Category::model()->findByPk($id);
-        if (!$model) {
-            $this->redirect(Yii::app()->request->urlReferrer);
-        }
-        if ($model->has_sub) {
-            Yii::app()->user->setFlash('error', '先删除子类');
-        } else {
-            $model->delete();
-        }
-        $this->redirect(array('index'));
-    }
-
     public function actionForm()
     {
         if (!Yii::app()->request->isPostRequest) {
@@ -60,6 +43,7 @@ class CategoryController extends DManagerController
         $sortnum = $request->getPost('sortnum');
         $max_level = $request->getPost('max_level');
         $name = $request->getPost('name');
+        $has_alter = $request->getPost('has_alter');
         if (!$sortnum || empty($name)) {
             Yii::app()->user->setFlash('error', '请填写完整');
             $this->redirect(Yii::app()->request->urlReferrer);
@@ -72,15 +56,36 @@ class CategoryController extends DManagerController
             $model->route = '';
             $model->pic = '';
             $model->intro = '';
-            $model->has_sub = 0;
+            $model->has_sub = 1;
         }
         $model->sortnum = $sortnum;
         $model->name = $name;
         $model->max_level = $max_level;
+        $model->has_alter = $has_alter;
         if ($model->save()) {
+            Yii::app()->user->setFlash('success', '保存栏目成功');
             $this->redirect(array('index'));
         }
-        Yii::app()->user->setFlash('error', '添加失败');
+        Yii::app()->user->setFlash('error', '保存栏目失败');
         $this->redirect(Yii::app()->request->urlReferrer);
+    }
+
+    public function actionDel()
+    {
+        $id = Yii::app()->request->getQuery('id');
+        if ($id < 1) {
+            $this->redirect(Yii::app()->request->urlReferrer);
+        }
+        $model = Category::model()->findByPk($id);
+        if (!$model) {
+            $this->redirect(Yii::app()->request->urlReferrer);
+        }
+        if ($model->has_sub) {
+            Yii::app()->user->setFlash('error', '栏目下有子栏目，请先删除子栏目');
+        } else {
+            $model->delete();
+            Yii::app()->user->setFlash('success', '删除栏目成功');
+        }
+        $this->redirect(array('index'));
     }
 }
