@@ -15,6 +15,9 @@ class ManagerModule extends CWebModule
                 'allowAutoLogin' => true,
                 'loginUrl' => array('default/signin'),
             ),
+            'errorHandler'=>array(
+                'errorAction' => 'manager/error/index',
+            ),
         ));
     }
 

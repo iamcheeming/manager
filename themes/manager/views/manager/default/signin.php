@@ -74,7 +74,7 @@
                     </div>
                     <div class="field">
                         <div class="checkbox">
-                            <input type="checkbox" id="remember" name="remember" />
+                            <input type="checkbox" id="remember" name="remember" value="1" />
                             <label for="remember">Remember me</label>
                         </div>
                     </div>

@@ -5,22 +5,9 @@
             <li><a href="<?php echo Yii::app()->urlManager->createUrl('manager/admin/add'); ?>">添加管理员</a></li>
         </ul>
     </div>
-    <?php if (Yii::app()->user->hasFlash('error')): ?>
-    <div class="messages">
-        <div id="message-error" class="message message-error">
-            <div class="image">
-                <img src="<?php echo $this->assetsUrl; ?>/resources/images/icons/error.png" alt="Error" height="32" />
-            </div>
-            <div class="text">
-                <h6>Error Message</h6>
-                <span><?php echo Yii::app()->user->getFlash('error'); ?></span>
-            </div>
-            <div class="dismiss">
-                <a href="#message-error"></a>
-            </div>
-        </div>
-    </div>
-    <?php endif; ?>
+
+    <?php $this->renderPartial('../_flashes'); ?>
+
     <div class="table">
         <form action="" method="post">
             <table>
@@ -44,7 +31,10 @@
                         <td class="w20 center"><?php echo $row['created_time']; ?></td>
                         <td class="w20 center last">
                             <a href="<?php echo $this->createUrl('edit', array('id' => $row['id'])); ?>">修改</a>
+                            <?php if ($row['id'] > 1): ?>
+                            <a href="<?php echo $this->createUrl('resume', array('id' => $row['id'])); ?>">重置密码</a>
                             <a href="<?php echo $this->createUrl('del', array('id' => $row['id'])); ?>">删除</a>
+                            <?php endif; ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>

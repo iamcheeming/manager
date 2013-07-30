@@ -4,15 +4,11 @@
         <h1><a href="javascript:;" title="Manager System">Manager System</a></h1>
     </div>
     <ul id="user">
-        <li class="first"><a href="">Account</a></li>
-        <li><a href="">Messages (0)</a></li>
-        <li><a href="<?php echo Yii::app()->urlManager->createUrl('manager/default/signout'); ?>">Logout</a></li>
-        <li class="highlight last"><a href="/" target="_blank">View Site</a></li>
+        <li class="first"><a><?php echo Yii::app()->user->name; ?></a></li>
+        <li><a href="<?php echo Yii::app()->urlManager->createUrl('manager/admin/me'); ?>">修改密码</a></li>
+        <li class="highlight last"><a href="<?php echo Yii::app()->urlManager->createUrl('manager/default/signout'); ?>">退出登录</a></li>
     </ul>
     <div id="header-inner">
-        <div id="home">
-            <a href="<?php echo Yii::app()->urlManager->createUrl('manager'); ?>" title="Home"></a>
-        </div>
         <div class="corner tl"></div>
         <div class="corner tr"></div>
     </div>
