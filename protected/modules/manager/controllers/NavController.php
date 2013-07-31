@@ -37,6 +37,7 @@ class NavController extends DManagerController
             'max_level' => $parent_model->max_level - 1,
             'name' => '',
             'has_sub' => ($parent_model->max_level - 1) ? 1 : 0,
+            'has_alter' => 1,
         );
         $this->render('form', array('record' => $record));
     }
