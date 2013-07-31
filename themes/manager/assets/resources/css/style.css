@@ -2106,9 +2106,24 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
     text-align: center;
 }
 
+#content div.box table td.w8
+{
+    width: 8%;
+}
+
 #content div.box table td.w10
 {
     width: 10%;
+}
+
+#content div.box table td.w12
+{
+    width: 12%;
+}
+
+#content div.box table td.w16
+{
+    width: 16%;
 }
 
 #content div.box table td.w20

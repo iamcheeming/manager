@@ -73,7 +73,7 @@ class NavController extends DManagerController
             Yii::app()->user->setFlash('error', '不存在的父栏目');
             $this->redirect(Yii::app()->request->urlReferrer);
         }
-        if (!$parent_model->has_alter) {
+        if (!$parent_model->has_alter && $id < 1) {
             Yii::app()->user->setFlash('error', '父栏目无法添加子栏目');
             $this->redirect(Yii::app()->request->urlReferrer);
         }
@@ -88,7 +88,11 @@ class NavController extends DManagerController
         } else {
             $model = new Category();
             $model->pid = $pid;
-            $model->route = "{$parent_model->route},{$pid}";
+            if ($parent_model->route) {
+                $model->route = "{$parent_model->route}{$pid},";
+            } else {
+                $model->route = "{$pid},";
+            }
             $model->pic = '';
             $model->intro = '';
             $model->has_alter = 1;
@@ -97,6 +101,11 @@ class NavController extends DManagerController
         $model->name = $name;
         $model->max_level = $max_level;
         $model->has_sub = $has_sub;
+
+        if (Yii::app()->user->id == -1) {
+            $model->has_alter = $request->getPost('has_alter');
+        }
+
         if ($model->save()) {
             $this->redirect(array('index', 'pid' => $model->pid));
         }

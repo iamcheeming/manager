@@ -56,6 +56,17 @@
                         <label><input type="radio" name="has_sub" value="0"<?php if (!$record['has_sub']) echo ' checked'; ?> /> Deny</label>
                     </div>
                 </div>
+                <?php if (Yii::app()->user->id == -1): ?>
+                <div class="field">
+                    <div class="label">
+                        <label for="input-small">可增删:</label>
+                    </div>
+                    <div class="input">
+                        <label><input type="radio" name="has_alter" value="1"<?php if ($record['has_alter']) echo ' checked'; ?> /> Allow</label>
+                        <label><input type="radio" name="has_alter" value="0"<?php if (!$record['has_alter']) echo ' checked'; ?> /> Deny</label>
+                    </div>
+                </div>
+                <?php endif; ?>
                 <div class="buttons">
                     <input type="submit" name="submit" value="Submit" />
                     <input type="reset" name="reset" value="Reset" />

@@ -15,7 +15,7 @@ class CategoryController extends DManagerController
         $record = array(
             'id' => 0,
             'sortnum' => Category::model()->getMaxSortnum(),
-            'max_level' => 4,
+            'max_level' => 2,
             'name' => '',
             'has_alter' => 1,
         );
@@ -80,7 +80,7 @@ class CategoryController extends DManagerController
         if (!$model) {
             $this->redirect(Yii::app()->request->urlReferrer);
         }
-        if ($model->has_sub) {
+        if (Category::model()->countByAttributes(array('pid' => $id))) {
             Yii::app()->user->setFlash('error', '栏目下有子栏目，请先删除子栏目');
         } else {
             $model->delete();

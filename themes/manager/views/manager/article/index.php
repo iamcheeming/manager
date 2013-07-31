@@ -17,48 +17,60 @@
             <table>
                 <thead>
                 <tr>
-                    <th class="left">标题</th>
-                    <th></th>
-                    <th>Added</th>
-                    <th>Category</th>
-                    <th class="selected last"><input type="checkbox" class="checkall" /></th>
+                    <th>序号</th>
+                    <th>标题</th>
+                    <th>图片</th>
+                    <th>外链</th>
+                    <th>状态</th>
+                    <th>添加时间</th>
+                    <th class="last">管理</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td class="title">24" LED Monitor</td>
-                    <td class="price">$110.00</td>
-                    <td class="date" id="dp1375169552169">April 25th, 2010 at 4:15 PM</td>
-                    <td class="category">Monitors</td>
-                    <td class="selected last"><input type="checkbox" /></td>
+                    <td class="category">10</td>
+                    <td class="center">$110.00</td>
+                    <td class="w8 center">无</td>
+                    <td class="w8 center">无</td>
+                    <td class="w8 center">置顶</td>
+                    <td class="w12 center">2013-10-12</td>
+                    <td class="w12 center last">编辑 删除</td>
                 </tr>
                 <tr>
-                    <td class="title">27" LCD Flat Panel</td>
-                    <td class="price">$150.00</td>
-                    <td class="date" id="dp1375169552170">April 25th, 2010 at 4:15 PM</td>
-                    <td class="category">Monitors</td>
-                    <td class="selected last"><input type="checkbox"></td>
+                    <td class="category">10</td>
+                    <td class="center">$110.00</td>
+                    <td class="w8 center">无</td>
+                    <td class="w8 center">无</td>
+                    <td class="w8 center">正常</td>
+                    <td class="w12 center">2013-10-12</td>
+                    <td class="w12 center last">编辑 删除</td>
                 </tr>
                 <tr>
-                    <td class="title">6GB 240-Pin DDR3 SDRAM DDR3 1600</td>
-                    <td class="price">$80.00</td>
-                    <td class="date" id="dp1375169552171">April 25th, 2010 at 4:15 PM</td>
-                    <td class="category">Memory</td>
-                    <td class="selected last"><input type="checkbox"></td>
+                    <td class="category">10</td>
+                    <td class="center">$110.00</td>
+                    <td class="w8 center">无</td>
+                    <td class="w8 center">无</td>
+                    <td class="w8 center">置顶</td>
+                    <td class="w12 center">2013-10-12</td>
+                    <td class="w12 center last">编辑 删除</td>
                 </tr>
                 <tr>
-                    <td class="title">500GB 7200 RPM 16MB Cache SATA 3.0Gb/s 3.5</td>
-                    <td class="price">$92.00</td>
-                    <td class="date" id="dp1375169552172">April 25th, 2010 at 4:15 PM</td>
-                    <td class="category">Hard Drives</td>
-                    <td class="selected last"><input type="checkbox"></td>
+                    <td class="category">10</td>
+                    <td class="center">$110.00</td>
+                    <td class="w8 center">无</td>
+                    <td class="w8 center">无</td>
+                    <td class="w8 center">置顶</td>
+                    <td class="w12 center">2013-10-12</td>
+                    <td class="w12 center last">编辑 删除</td>
                 </tr>
                 <tr>
-                    <td class="title">2GB 240-Pin DDR3 SDRAM DDR3 1600</td>
-                    <td class="price">$52.00</td>
-                    <td class="date" id="dp1375169552173">April 25th, 2010 at 4:15 PM</td>
-                    <td class="category">Memory</td>
-                    <td class="selected last"><input type="checkbox"></td>
+                    <td class="category">10</td>
+                    <td class="center">$110.00</td>
+                    <td class="w8 center">无</td>
+                    <td class="w8 center">无</td>
+                    <td class="w8 center">置顶</td>
+                    <td class="w12 center">2013-10-12</td>
+                    <td class="w12 center last">编辑 删除</td>
                 </tr>
                 </tbody>
             </table>
