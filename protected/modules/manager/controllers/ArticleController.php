@@ -1,5 +1,5 @@
 <?php
-class ArticleController extends DManagerController
+class ArticleController extends PController
 {
     public function actionIndex()
     {
@@ -11,10 +11,14 @@ class ArticleController extends DManagerController
     }
 
     public function actionAdd()
-    {}
+    {
+        $this->render('article');
+    }
 
     public function actionEdit()
-    {}
+    {
+        $this->render('article');
+    }
 
     public function actionDel()
     {}

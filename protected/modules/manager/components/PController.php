@@ -1,5 +1,5 @@
 <?php
-class DManagerController extends Controller
+class PController extends Controller
 {
     private $_assetsUrl;
 

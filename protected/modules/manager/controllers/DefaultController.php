@@ -1,5 +1,5 @@
 <?php
-class DefaultController extends DManagerController
+class DefaultController extends PController
 {
     public function actionIndex()
     {

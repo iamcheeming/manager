@@ -1,5 +1,5 @@
 <?php
-class ErrorController extends DManagerController
+class ErrorController extends PController
 {
     public function actionIndex()
     {

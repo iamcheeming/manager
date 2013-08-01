@@ -1,5 +1,5 @@
 <?php
-class CategoryController extends DManagerController
+class CategoryController extends PController
 {
     public function actionIndex()
     {

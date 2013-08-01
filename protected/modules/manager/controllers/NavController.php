@@ -1,5 +1,5 @@
 <?php
-class NavController extends DManagerController
+class NavController extends PController
 {
     public function actionIndex()
     {
