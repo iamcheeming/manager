@@ -6,7 +6,7 @@ return array(
     // '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 
     // manager
-    'manager/<action:(signin|signout)>' => 'manager/default/<action>',
+    'manager/<action:(signin|signout|auth)>' => 'manager/default/<action>',
     'manager/category/list' => 'manager/category/index',
     'manager/category/<action:(edit|del)>/<id:\d+>' => 'manager/category/<action>',
     'manager/nav/list/<pid:\d+>' => 'manager/nav/index',

@@ -31,6 +31,7 @@ return CMap::mergeArray(
                     array(
                         'class' => 'CWebLogRoute',
                         'levels' => 'trace, info, profile, error, warning',
+                        // 'showInFireBug' => true,
                     ),
                 ),
             ),

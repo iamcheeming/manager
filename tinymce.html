@@ -6,12 +6,14 @@
     <script src="tinymce/tinymce.min.js"></script>
     <script>
     tinymce.init({
-        language : 'zh_CN',
-        selector:'textarea',
+        language: 'zh_CN',
+        selector: 'textarea',
+        // convert_urls: false,
+        image_advtab: true, // image advance
         plugins: [
             "advlist autolink lists link image charmap print preview anchor",
             "searchreplace visualblocks code fullscreen",
-            "insertdatetime media table contextmenu paste"
+            "insertdatetime media table contextmenu paste moxiemanager"
         ],
         toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
     });
