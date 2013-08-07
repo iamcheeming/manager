@@ -3,28 +3,15 @@
         <h5>"<?php echo $parent_record['name']; ?>"子栏目</h5>
         <?php if ($parent_record['has_alter']): ?>
         <ul class="links">
-            <li><a href="<?php echo Yii::app()->urlManager->createUrl('manager/nav/add', array('pid' => $parent_record['id'])); ?>">添加子栏目</a></li>
+            <li><a href="<?php echo $this->createUrl('add', array('pid' => $parent_record['id'])); ?>">添加子栏目</a></li>
         </ul>
         <?php endif; ?>
     </div>
-    <?php if (Yii::app()->user->hasFlash('error')): ?>
-        <div class="messages">
-            <div id="message-error" class="message message-error">
-                <div class="image">
-                    <img src="<?php echo $this->assetsUrl; ?>/resources/images/icons/error.png" alt="Error" height="32" />
-                </div>
-                <div class="text">
-                    <h6>Error Message</h6>
-                    <span><?php echo Yii::app()->user->getFlash('error'); ?></span>
-                </div>
-                <div class="dismiss">
-                    <a href="#message-error"></a>
-                </div>
-            </div>
-        </div>
-    <?php endif; ?>
+
+    <?php $this->renderPartial('../_flashes'); ?>
+
     <div class="table">
-        <form action="" method="post">
+        <form method="post">
             <table>
                 <thead>
                 <tr>

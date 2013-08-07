@@ -5,7 +5,7 @@
 
     <?php $this->renderPartial('../_flashes'); ?>
 
-    <form id="form" action="" method="post">
+    <form method="post">
         <div class="form">
             <div class="fields">
                 <div class="field field-first">

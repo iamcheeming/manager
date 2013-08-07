@@ -2,14 +2,14 @@
     <div class="title">
         <h5>管理员</h5>
         <ul class="links">
-            <li><a href="<?php echo Yii::app()->urlManager->createUrl('manager/admin/add'); ?>">添加管理员</a></li>
+            <li><a href="<?php echo $this->createUrl('add'); ?>">添加管理员</a></li>
         </ul>
     </div>
 
     <?php $this->renderPartial('../_flashes'); ?>
 
     <div class="table">
-        <form action="" method="post">
+        <form method="post">
             <table>
                 <thead>
                 <tr>

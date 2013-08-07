@@ -2,22 +2,9 @@
     <div class="title">
         <h5>增加/修改分类</h5>
     </div>
-    <?php if (Yii::app()->user->hasFlash('error')): ?>
-    <div class="messages">
-        <div id="message-error" class="message message-error">
-            <div class="image">
-                <img src="<?php echo $this->assetsUrl; ?>/resources/images/icons/error.png" alt="Error" height="32" />
-            </div>
-            <div class="text">
-                <h6>Error Message</h6>
-                <span><?php echo Yii::app()->user->getFlash('error'); ?></span>
-            </div>
-            <div class="dismiss">
-                <a href="#message-error"></a>
-            </div>
-        </div>
-    </div>
-    <?php endif; ?>
+
+    <?php $this->renderPartial('../_flashes'); ?>
+
     <form id="form" action="<?php echo $this->createUrl('form'); ?>" method="post">
         <div class="form">
             <div class="fields">

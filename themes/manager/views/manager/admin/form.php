@@ -5,7 +5,7 @@
 
     <?php $this->renderPartial('../_flashes'); ?>
 
-    <form id="form" action="<?php echo $this->createUrl('form'); ?>" method="post">
+    <form action="<?php echo $this->createUrl('form'); ?>" method="post">
         <div class="form">
             <div class="fields">
                 <input type="hidden" name="id" value="<?php echo $record['id']; ?>" />

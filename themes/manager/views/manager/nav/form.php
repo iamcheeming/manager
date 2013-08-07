@@ -2,23 +2,10 @@
     <div class="title">
         <h5><?php echo $record['id'] ? '修改' : '添加'; ?>子栏目</h5>
     </div>
-    <?php if (Yii::app()->user->hasFlash('error')): ?>
-        <div class="messages">
-            <div id="message-error" class="message message-error">
-                <div class="image">
-                    <img src="<?php echo $this->assetsUrl; ?>/resources/images/icons/error.png" alt="Error" height="32" />
-                </div>
-                <div class="text">
-                    <h6>Error Message</h6>
-                    <span><?php echo Yii::app()->user->getFlash('error'); ?></span>
-                </div>
-                <div class="dismiss">
-                    <a href="#message-error"></a>
-                </div>
-            </div>
-        </div>
-    <?php endif; ?>
-    <form id="form" action="<?php echo $this->createUrl('form'); ?>" method="post">
+
+    <?php $this->renderPartial('../_flashes'); ?>
+
+    <form action="<?php echo $this->createUrl('form'); ?>" method="post">
         <div class="form">
             <div class="fields">
                 <input type="hidden" name="id" value="<?php echo $record['id']; ?>" />

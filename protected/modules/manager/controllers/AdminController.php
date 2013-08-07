@@ -81,7 +81,7 @@ class AdminController extends PController
         }
         $model = Admin::model()->findByPk($id);
         if (!$model) {
-            Yii::app()->user->setFlash('error', '不存在的管理员id');
+            Yii::app()->user->setFlash('error', '无效的管理员');
             $this->redirect(array('index'));
         }
         if ($model->delete()) {
@@ -96,10 +96,10 @@ class AdminController extends PController
     {
         $id = Yii::app()->request->getQuery('id');
         if ($id < 2) {
-            Yii::app()->user->setFlash('error', '错误的用户id');
+            Yii::app()->user->setFlash('error', '无效的管理员');
             $this->redirect(array('index'));
         }
-        $password = $this->generatePassword();
+        $password = Helper::generatePassword();
         if (Admin::model()->updateByPk($id, array('password' => md5($password)))) {
             Yii::app()->user->setFlash('success', '重置密码成功，重置后密码为“' . $password . '”');
         } else {
@@ -132,11 +132,5 @@ class AdminController extends PController
             }
         }
         $this->render('me');
-    }
-
-    private function generatePassword($length = 6)
-    {
-        $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_';
-        return substr(str_shuffle($chars), 0, $length);
     }
 }

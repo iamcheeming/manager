@@ -20,7 +20,6 @@
     <script src="/tinymce/tinymce.min.js"></script>
     <script>
     $(function () {
-        // $("#date-picker").datepicker();
         $("#box-tabs, #box-left-tabs").tabs();
     });
     </script>

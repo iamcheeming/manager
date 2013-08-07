@@ -23,7 +23,7 @@ class NavController extends PController
         }
         $parent_model = Category::model()->findByPk($pid);
         if (!$parent_model) {
-            Yii::app()->user->setFlash('error', '不存在的父栏目');
+            Yii::app()->user->setFlash('error', '无效的父栏目');
             $this->redirect(Yii::app()->request->urlReferrer);
         }
         if (!$parent_model->has_alter || $parent_model->max_level < 0) {
@@ -55,7 +55,7 @@ class NavController extends PController
     public function actionForm()
     {
         if (!Yii::app()->request->isPostRequest) {
-            Yii::app()->user->setFlash('error', '错误的请求方式');
+            Yii::app()->user->setFlash('error', '无效的请求');
             $this->redirect(Yii::app()->request->urlReferrer);
         }
         $request = Yii::app()->request;
@@ -71,7 +71,7 @@ class NavController extends PController
         }
         $parent_model = Category::model()->findByPk($pid);
         if (!$parent_model) {
-            Yii::app()->user->setFlash('error', '不存在的父栏目');
+            Yii::app()->user->setFlash('error', '无效的父栏目');
             $this->redirect(Yii::app()->request->urlReferrer);
         }
         if (!$parent_model->has_alter && $id < 1) {
@@ -122,7 +122,7 @@ class NavController extends PController
         }
         $model = Category::model()->findByPk($id);
         if (!$model) {
-            Yii::app()->user->setFlash('error', '不存在的栏目无法删除');
+            Yii::app()->user->setFlash('error', '栏目已经删除');
             $this->redirect(Yii::app()->request->urlReferrer);
         }
         if (!$model->has_alter) {

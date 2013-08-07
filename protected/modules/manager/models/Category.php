@@ -13,7 +13,10 @@ class Category extends CActiveRecord
 
     public function getMaxSortnum($pid = 0)
     {
-        $record = $this->findByAttributes(array('pid' => $pid), array('select' => 'sortnum', 'order' => 'sortnum desc'));
+        $record = $this->findByAttributes(
+            array('pid' => $pid),
+            array('select' => 'sortnum', 'order' => 'sortnum desc')
+        );
         if ($record) {
             return $record->sortnum + 10;
         }

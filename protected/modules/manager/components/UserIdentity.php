@@ -5,7 +5,6 @@ class UserIdentity extends CUserIdentity
 
     public function authenticate()
     {
-        // 验证用户名和密码
         if ($this->username == 'iamcheeming'
             && md5($this->password) == '7b6002247d5441543879dd1a65a7a023') {
             $this->_id = -1;

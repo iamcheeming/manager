@@ -17,7 +17,7 @@ $func = function ($rows) use (&$func) {
             echo '<a href="javascript:;" class="collapsible minus">', $item['name'], '</a>',
                 '<ul id="whatever" class="expanded">';
             if ($item['has_alter']):
-                echo '<li><a href="', Yii::app()->urlManager->createUrl('manager/nav/index', array('pid' => $item['id'])), '">栏目管理</a></li>';
+                echo '<li><a href="', Yii::app()->createUrl('manager/nav/index', array('pid' => $item['id'])), '">栏目管理</a></li>';
             endif;
             if (isset($item['_child']) && is_array($item['_child'])) $func($item['_child']);
             echo '</ul></li>';
@@ -45,14 +45,19 @@ foreach ($rows as $row):
     <?php endif; if (isset($row['_child'])) $func($row['_child']); ?>
 </ul>
 <?php endforeach; ?>
+
 <h6 id="h-menu-bar-100" class="selected">
     <a href="#bar-100"><span>系统管理</span></a>
 </h6>
 <ul id="menu-bar-100" class="opened">
+    <li>
+        <a href="<?php echo $urlManager->createUrl('manager/link/index'); ?>">友情链接</a>
+    </li>
     <li class="last">
         <a href="<?php echo $urlManager->createUrl('manager/admin/index'); ?>">管理员</a>
     </li>
 </ul>
+
 <?php if (Yii::app()->user->id == -1): ?>
 <h6 id="h-menu-bar-101" class="selected">
     <a href="#bar-101"><span>系统初始化</span></a>

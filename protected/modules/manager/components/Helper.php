@@ -1,6 +1,12 @@
 <?php
 class Helper
 {
+    public static function generatePassword($length = 6)
+    {
+        $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_';
+        return substr(str_shuffle($chars), 0, $length);
+    }
+
     public static function pagination($totalNum, $pageNo = 1, $pageSize = 20)
     {
         if ($totalNum <= $pageSize) return '';

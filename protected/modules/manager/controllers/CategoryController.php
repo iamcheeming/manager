@@ -35,7 +35,7 @@ class CategoryController extends PController
     public function actionForm()
     {
         if (!Yii::app()->request->isPostRequest) {
-            Yii::app()->user->setFlash('error', '错误的请求方式');
+            Yii::app()->user->setFlash('error', '无效的请求');
             $this->redirect(Yii::app()->request->urlReferrer);
         }
         $request = Yii::app()->request;

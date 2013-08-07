@@ -2,41 +2,12 @@
     <div class="title">
         <h5>栏目分类</h5>
         <ul class="links">
-            <li><a href="<?php echo Yii::app()->urlManager->createUrl('manager/category/add'); ?>">添加栏目</a></li>
+            <li><a href="<?php echo $this->createUrl('add'); ?>">添加栏目</a></li>
         </ul>
     </div>
-    <?php if (Yii::app()->user->hasFlash('error')): ?>
-    <div class="messages">
-        <div id="message-error" class="message message-error">
-            <div class="image">
-                <img src="<?php echo $this->assetsUrl; ?>/resources/images/icons/error.png" alt="Error" height="32" />
-            </div>
-            <div class="text">
-                <h6>Error Message</h6>
-                <span><?php echo Yii::app()->user->getFlash('error'); ?></span>
-            </div>
-            <div class="dismiss">
-                <a href="#message-error"></a>
-            </div>
-        </div>
-    </div>
-    <?php endif; ?>
-    <?php if (Yii::app()->user->hasFlash('success')): ?>
-    <div class="messages">
-        <div id="message-success" class="message message-success">
-            <div class="image">
-                <img src="<?php echo $this->assetsUrl; ?>/resources/images/icons/success.png" alt="Success" height="32">
-            </div>
-            <div class="text">
-                <h6>Success Message</h6>
-                <span><?php echo Yii::app()->user->getFlash('success'); ?></span>
-            </div>
-            <div class="dismiss">
-                <a href="#message-success"></a>
-            </div>
-        </div>
-    </div>
-    <?php endif; ?>
+
+    <?php $this->renderPartial('../_flashes'); ?>
+
     <div class="table">
         <form action="" method="post">
             <table>

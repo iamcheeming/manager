@@ -1,90 +1,71 @@
-<!-- box / left -->
-<div id="box-left-tabs" class="box box-left box-padding">
+<div class="box  box-left">
     <!-- box / title -->
-    <div class="title">
-        <h5>Left Column</h5>
-        <ul class="links">
-            <li><a href="#box-left-forms">Tab #1</a></li>
-            <li><a href="#box-left-other">Tab #2</a></li>
-        </ul>
+    <div class="title" style="width: 100%;">
+        <h5>诊断报告</h5> <span style="float: left;padding: 11px 0 11px 10px;color: #ccc;">推广最近七天诊断报告</span>
+    </div>
+    <div style="margin:10px">
+        <table>
+            <thead>
+            <tr class="totalData">
+
+                <td>展示</td>
+                <td>点击</td>
+                <td>点击率</td>
+                <td>消费金额</td>
+                <td>平均单价</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="totalData">
+                <td><span>0</span></td>
+                <td><span>0</span></td>
+                <td><span>0.00%</span></td>
+                <td>￥<span>0</span></td>
+                <td>￥<span>0.00</span></td>
+            </tr>
+            </tbody>
+        </table>
     </div>
     <!-- end box / title -->
-    <div id="box-left-forms">
-        <form action="" method="post">
-            <div class="form">
-                <div class="fields">
-                    <div class="field field-first">
-                        <div class="label">
-                            <label for="input">Textbox:</label>
-                        </div>
-                        <div class="input">
-                            <input type="text" id="input" name="input" />
-                        </div>
-                    </div>
-                    <div class="field">
-                        <div class="label label-textarea">
-                            <label for="textarea">Textarea:</label>
-                        </div>
-                        <div class="textarea">
-                            <textarea id="textarea1" name="textarea" cols="50" rows="8"></textarea>
-                        </div>
-                    </div>
-                    <div class="buttons">
-                        <input type="submit" name="submit" value="Submit" />
-                        <input type="reset" name="reset" value="Reset" />
-                    </div>
-                </div>
-            </div>
-        </form>
+    <div style="line-height: 20px;padding: 10px 0;">
+        <p style="font-weight:bold">诊断结果：</p>
+        <p>选择渠道偏少,广告转化率偏差,平均单价偏低。</p>
+        <p style="font-weight:bold">诊断建议：</p>
+        <p>尝试增加投放广告渠道,提高平均单价使广告得到更多展示,完整广告信息并尝试调整广告图片和标题,停止点击率率低的广告渠道。</p>
+        <p style="text-align: right;"><a href="http://e.pps.tv/index.php?m=report">查看广告组推广数据</a></p>
     </div>
-    <div id="box-left-other">
-        <!-- paragraphs -->
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></blockquote>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <!-- end paragraphs -->
-    </div>
+
 </div>
-<!-- end box / left -->
-<!-- box / right -->
+
 <div class="box box-right">
-    <!-- box / title -->
-    <div class="title">
-        <h5>Right Column</h5>
+    <div class="title" style="width: 100%;">
+        <h5>我的账户</h5>
     </div>
-    <!-- end box / title -->
-    <!-- paragraphs -->
-    <p class="start"><img src="resources/images/misc/ginger.jpg" alt="Ginger" class="right" />Lorem ipsum dolor sit amet, consectetur <a href="">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <!-- end paragraphs -->
-    <!-- headings -->
-    <h1>Heading</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></blockquote>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    <h2>Heading</h2>
-    <ol class="decimal">
-        <li>List Item 1</li>
-        <li>List Item 2</li>
-        <li>List Item 3</li>
+    <ol class="square">
+        <li style="margin-left: 20px;color:red">
+            <img src="http://s1.ppsimg.com/ipd/ad_click/warning.png" style="vertical-align: text-top;">
+            账户余额不足，请立即冲值！
+        </li>
+        <li style="margin-left: 20px;">今日消费：<span style="color: #000; ">RMB 0.00</span>
+            元
+        </li>
+        <li style="margin-left: 20px;">账户余额：<span style="color: #000;font-weight: bold;">RMB <span style="color:red">0.00 </span></span>
+            元 <span class="phrase_tip_display" data_id="241"></span>
+        </li>
+        <li style="margin:0 20px; height: 30px; border-bottom: 1px dashed #0066CC;overflow:hidden;margin-bottom: 15px;padding-bottom: 15px;margin-top: 5px;">
+            <a class="ui-button mybutton" href="/pay/index.php" style="font-weight: bold;">
+                账户充值
+            </a>
+        </li>
     </ol>
-    <h3>Heading</h3>
-    <ul class="disc">
-        <li>List Item 1</li>
-        <li>List Item 2</li>
-        <li>List Item 3</li>
-    </ul>
-    <h4>Heading</h4>
-    <ul class="square">
-        <li>List Item 1</li>
-        <li>List Item 2</li>
-        <li>List Item 3</li>
-    </ul>
-    <h5>Heading</h5>
-    <dl>
-        <dt>Definition List Title</dt>
-        <dd>This is a definition list division.</dd>
-    </dl>
-    <!-- end headings -->
+    <ol class="disc" style="padding-top:5px;">
+        <li style="padding-left:20px;"><a href="/msg.php?id=341" style="color: #0066CC;">广告组投放选择时间段和地域设置功能上线 </a>2013-07-17                    </li>
+        <li style="padding-left:20px;"><a href="/msg.php?id=305" style="color: #0066CC;">淘宝视频服务升级 支持添加商品购买链接 </a>2013-07-05                    </li>
+        <li style="padding-left:20px;"><a href="/msg.php?id=301" style="color: #0066CC;">6月推广账单发布 </a>2013-07-05                    </li>
+        <li style="padding-left:20px;"><a href="/msg.php?id=281" style="color: #0066CC;">广告类型上线 </a>2013-06-27                    </li>
+        <li style="padding-left:20px;"><a href="/msg.php?id=261" style="color: #0066CC;">提醒设置功能上线 </a>2013-06-24                    </li>
+        <li style="padding-left:20px;"><a href="/msg.php?id=241" style="color: #0066CC;">“看点”滚雪球 多充多返点 </a>2013-06-03                    </li>
+        <li style="text-align: right;padding-right: 30px;"><a href="/msg.php">更多消息</a>
+        </li>
+    </ol>
 </div>
-<!-- end box / right -->
