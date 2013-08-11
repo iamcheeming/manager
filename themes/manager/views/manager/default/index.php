@@ -1,71 +1,441 @@
-<div class="box  box-left">
-    <!-- box / title -->
-    <div class="title" style="width: 100%;">
-        <h5>诊断报告</h5> <span style="float: left;padding: 11px 0 11px 10px;color: #ccc;">推广最近七天诊断报告</span>
+<div class="page-title">
+    <div>
+        <h1><i class="icon-file-alt"></i> Dashboard</h1>
+        <h4>Overview, stats, chat and more</h4>
     </div>
-    <div style="margin:10px">
-        <table>
-            <thead>
-            <tr class="totalData">
-
-                <td>展示</td>
-                <td>点击</td>
-                <td>点击率</td>
-                <td>消费金额</td>
-                <td>平均单价</td>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="totalData">
-                <td><span>0</span></td>
-                <td><span>0</span></td>
-                <td><span>0.00%</span></td>
-                <td>￥<span>0</span></td>
-                <td>￥<span>0.00</span></td>
-            </tr>
-            </tbody>
-        </table>
+</div>
+<div id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li class="active"><i class="icon-home"></i> Home</li>
+    </ul>
+</div>
+<div class="row-fluid">
+    <div class="span7">
+        <div class="box box-black">
+            <div class="box-title">
+                <h3><i class="icon-retweet"></i> Thing To Do</h3>
+                <div class="box-tool">
+                    <a data-action="collapse" href="#"><i class="icon-chevron-up"></i></a>
+                    <a data-action="close" href="#"><i class="icon-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+                <ul class="things-to-do">
+                    <li>
+                        <p>
+                            <i class="icon-user"></i>
+                            <span class="value">4</span>
+                            Accept User Registration
+                            <a class="btn btn-success" href="#">Go</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <i class="icon-comments"></i>
+                            <span class="value">14</span>
+                            Review Comments
+                            <a class="btn btn-success" href="#">Go</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <i class="icon-shopping-cart blue"></i>
+                            <span class="value">7</span>
+                            Pending Orders
+                            <a class="btn btn-success" href="#">Go</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <i class="icon-file-text-alt"></i>
+                            <span class="value">4</span>
+                            New Invoice
+                            <a class="btn btn-success" href="#">Go</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <i class="icon-gear"></i>
+                            <span class="value">3</span>
+                            Settings To Change
+                            <a class="btn btn-success" href="#">Go</a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <!-- end box / title -->
-    <div style="line-height: 20px;padding: 10px 0;">
-        <p style="font-weight:bold">诊断结果：</p>
-        <p>选择渠道偏少,广告转化率偏差,平均单价偏低。</p>
-        <p style="font-weight:bold">诊断建议：</p>
-        <p>尝试增加投放广告渠道,提高平均单价使广告得到更多展示,完整广告信息并尝试调整广告图片和标题,停止点击率率低的广告渠道。</p>
-        <p style="text-align: right;"><a href="http://e.pps.tv/index.php?m=report">查看广告组推广数据</a></p>
+    <div class="span5">
+        <div class="box box-orange">
+            <div class="box-title">
+                <h3><i class="icon-bar-chart"></i> Weekly Changes</h3>
+                <div class="box-tool">
+                    <a data-action="collapse" href="#"><i class="icon-chevron-up"></i></a>
+                    <a data-action="close" href="#"><i class="icon-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+                <ul class="weekly-changes">
+                    <li>
+                        <p>
+                            <i class="icon-arrow-up light-green"></i>
+                            <span class="light-green">186</span>
+                            New Comments
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <i class="icon-minus light-blue"></i>
+                            <span class="light-blue">53</span>
+                            New Users
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <i class="icon-arrow-down light-red"></i>
+                            <span class="light-red">17</span>
+                            New Articles
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <i class="icon-arrow-up light-green"></i>
+                            <span class="light-green">75</span>
+                            New Tickets
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <i class="icon-arrow-down light-red"></i>
+                            <span class="light-red">74</span>
+                            New Orders
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-
 </div>
 
-<div class="box box-right">
-    <div class="title" style="width: 100%;">
-        <h5>我的账户</h5>
+<div class="row-fluid">
+    <div class="span7">
+        <div class="box box-magenta">
+            <div class="box-title">
+                <h3><i class="icon-comment"></i> Last Comments</h3>
+                <div class="box-tool">
+                    <a data-action="collapse" href="#"><i class="icon-chevron-up"></i></a>
+                    <a data-action="close" href="#"><i class="icon-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+                <ul class="messages nice-scroll" style="height: 300px">
+                    <li>
+                        <img src="img/demo/avatar/avatar2.jpg" alt="">
+                        <div>
+                            <div>
+                                <h5>David</h5>
+                                <span class="time"><i class="icon-time"></i> 26 minutes ago</span>
+                            </div>
+                            <p>Lorem ipsum commodo quis dolor voluptate et in Excepteur. Lorem ipsum amet dolor qui cupidatat in anim reprehenderit quis id culpa consequat non culpa. Lorem ipsum in culpa aliquip incididunt cupidatat dolore irure ...</p>
+                            <div class="messages-actions">
+                                <a class="show-tooltip" href="#" title="Approve"><i class="icon-ok green"></i></a>
+                                <a class="show-tooltip" href="#" title="Disapprove"><i class="icon-remove orange"></i></a>
+                                <a class="show-tooltip" href="#" title="Remove"><i class="icon-trash red"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="img/demo/avatar/avatar3.jpg" alt="">
+                        <div>
+                            <div>
+                                <h5>Sarah</h5>
+                                <span class="time"><i class="icon-time"></i> 1 days ago</span>
+                            </div>
+                            <p>Lorem ipsum commodo quis dolor voluptate et in Excepteur. Lorem ipsum amet dolor qui cupidatat in anim reprehenderit quis id culpa consequat non culpa.</p>
+                            <div class="messages-actions">
+                                <a class="show-tooltip" href="#" title="Approve"><i class="icon-ok green"></i></a>
+                                <a class="show-tooltip" href="#" title="Disapprove"><i class="icon-remove orange"></i></a>
+                                <a class="show-tooltip" href="#" title="Remove"><i class="icon-trash red"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="img/demo/avatar/avatar4.jpg" alt="">
+                        <div>
+                            <div>
+                                <h5>Emma</h5>
+                                <span class="time"><i class="icon-time"></i> 4 days ago</span>
+                            </div>
+                            <p>Lorem ipsum commodo quis dolor voluptate et in Excepteur. Lorem ipsum amet dolor qui cupidatat in anim reprehenderit quis id culpa consequat non culpa. Lorem ipsum in culpa aliquip incididunt cupidatat dolore irure cupidatat aute cupidatat quis nulla.</p>
+                            <div class="messages-actions">
+                                <a class="show-tooltip" href="#" title="Approve"><i class="icon-ok green"></i></a>
+                                <a class="show-tooltip" href="#" title="Disapprove"><i class="icon-remove orange"></i></a>
+                                <a class="show-tooltip" href="#" title="Remove"><i class="icon-trash red"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="img/demo/avatar/avatar5.jpg" alt="">
+                        <div>
+                            <div>
+                                <h5>John</h5>
+                                <span class="time"><i class="icon-time"></i> 2 weeks ago</span>
+                            </div>
+                            <p>Lorem ipsum commodo quis dolor voluptate et in Excepteur. Lorem ipsum amet dolor qui cupidatat in anim reprehenderit quis id culpa consequat non culpa. Lorem...</p>
+                            <div class="messages-actions">
+                                <a class="show-tooltip" href="#" title="Approve"><i class="icon-ok green"></i></a>
+                                <a class="show-tooltip" href="#" title="Disapprove"><i class="icon-remove orange"></i></a>
+                                <a class="show-tooltip" href="#" title="Remove"><i class="icon-trash red"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="img/demo/avatar/avatar1.jpg" alt="">
+                        <div>
+                            <div>
+                                <h5>Penny <span class="label label-info">Admin</span></h5>
+                                <span class="time"><i class="icon-time"></i> 14 July</span>
+                            </div>
+                            <p>Lorem ipsum commodo quis dolor voluptate et in Excepteur. Lorem ipsum amet dolor qui cupidatat in anim reprehenderit quis id culpa consequat non culpa. Lorem ipsum in culpa aliquip incididunt cupidatat dolore irure cupidatat aute cupidatat quis nulla.</p>
+                            <div class="messages-actions">
+                                <a class="show-tooltip" href="#" title="Approve"><i class="icon-ok green"></i></a>
+                                <a class="show-tooltip" href="#" title="Disapprove"><i class="icon-remove orange"></i></a>
+                                <a class="show-tooltip" href="#" title="Remove"><i class="icon-trash red"></i></a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <ol class="square">
-        <li style="margin-left: 20px;color:red">
-            <img src="http://s1.ppsimg.com/ipd/ad_click/warning.png" style="vertical-align: text-top;">
-            账户余额不足，请立即冲值！
-        </li>
-        <li style="margin-left: 20px;">今日消费：<span style="color: #000; ">RMB 0.00</span>
-            元
-        </li>
-        <li style="margin-left: 20px;">账户余额：<span style="color: #000;font-weight: bold;">RMB <span style="color:red">0.00 </span></span>
-            元 <span class="phrase_tip_display" data_id="241"></span>
-        </li>
-        <li style="margin:0 20px; height: 30px; border-bottom: 1px dashed #0066CC;overflow:hidden;margin-bottom: 15px;padding-bottom: 15px;margin-top: 5px;">
-            <a class="ui-button mybutton" href="/pay/index.php" style="font-weight: bold;">
-                账户充值
-            </a>
-        </li>
-    </ol>
-    <ol class="disc" style="padding-top:5px;">
-        <li style="padding-left:20px;"><a href="/msg.php?id=341" style="color: #0066CC;">广告组投放选择时间段和地域设置功能上线 </a>2013-07-17                    </li>
-        <li style="padding-left:20px;"><a href="/msg.php?id=305" style="color: #0066CC;">淘宝视频服务升级 支持添加商品购买链接 </a>2013-07-05                    </li>
-        <li style="padding-left:20px;"><a href="/msg.php?id=301" style="color: #0066CC;">6月推广账单发布 </a>2013-07-05                    </li>
-        <li style="padding-left:20px;"><a href="/msg.php?id=281" style="color: #0066CC;">广告类型上线 </a>2013-06-27                    </li>
-        <li style="padding-left:20px;"><a href="/msg.php?id=261" style="color: #0066CC;">提醒设置功能上线 </a>2013-06-24                    </li>
-        <li style="padding-left:20px;"><a href="/msg.php?id=241" style="color: #0066CC;">“看点”滚雪球 多充多返点 </a>2013-06-03                    </li>
-        <li style="text-align: right;padding-right: 30px;"><a href="/msg.php">更多消息</a>
-        </li>
-    </ol>
+    <div class="span5">
+        <div class="box box-red">
+            <div class="box-title">
+                <h3><i class="icon-tasks"></i> Tasks In Progress</h3>
+                <div class="box-tool">
+                    <a data-action="collapse" href="#"><i class="icon-chevron-up"></i></a>
+                    <a data-action="close" href="#"><i class="icon-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+                <ul class="tasks-in-progress">
+                    <li>
+                        <p>
+                            Backend Development
+                            <span>45%</span>
+                        </p>
+                        <div class="progress progress-mini progress-warning">
+                            <div class="bar" style="width:45%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            Some Optimization On Javascript Code
+                            <span>63%</span>
+                        </p>
+                        <div class="progress progress-mini">
+                            <div class="bar" style="width:63%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            Writing Documentation
+                            <span>30%</span>
+                        </p>
+                        <div class="progress progress-mini progress-danger">
+                            <div class="bar" style="width:30%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            Android App Development
+                            <span>80%</span>
+                        </p>
+                        <div class="progress progress-mini progress-success">
+                            <div class="bar" style="width:80%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            Marketing
+                            <span>35%</span>
+                        </p>
+                        <div class="progress progress-mini progress-striped">
+                            <div class="bar" style="width:35%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            iOS App Developement
+                            <span>55%</span>
+                        </p>
+                        <div class="progress progress-mini progress-warning progress-striped">
+                            <div class="bar" style="width:55%"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span7">
+        <div class="box box-pink">
+            <div class="box-title">
+                <h3><i class="icon-comments"></i> Chat</h3>
+                <div class="box-tool">
+                    <a data-action="collapse" href="#"><i class="icon-chevron-up"></i></a>
+                    <a data-action="close" href="#"><i class="icon-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+                <ul class="messages messages-chat messages-stripped messages-zigzag nice-scroll" style="height:250px">
+                    <li>
+                        <img src="img/demo/avatar/avatar1.jpg" alt="">
+                        <div>
+                            <div>
+                                <h5>Penny</h5>
+                                <span class="time"><i class="icon-time"></i> 2 minutes ago</span>
+                            </div>
+                            <p>hey Sarah</p>
+                            <p>how R U?</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="img/demo/avatar/avatar3.jpg" alt="">
+                        <div>
+                            <div>
+                                <h5>Sarah</h5>
+                                <span class="time"><i class="icon-time"></i> 1 minutes ago</span>
+                            </div>
+                            <p>Hi Penny</p>
+                            <p>Thanks, how are you ?</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="img/demo/avatar/avatar1.jpg" alt="">
+                        <div>
+                            <div>
+                                <h5>Penny</h5>
+                                <span class="time"><i class="icon-time"></i> 47 seconds ago</span>
+                            </div>
+                            <p>ey, I'm good</p>
+                            <p>what's up?</p>
+                            <p>what's your plan for dinner?</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="img/demo/avatar/avatar3.jpg" alt="">
+                        <div>
+                            <div>
+                                <h5>Sarah</h5>
+                                <span class="time"><i class="icon-time"></i> 12 seconds ago</span>
+                            </div>
+                            <p>Not much</p>
+                            <p>I haven't any plan, why ?</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="messages-input-form">
+                    <form method="POST" action="#">
+                        <div class="input">
+                            <input type="text" name="text" placeholder="Write here..." class="input-block-level">
+                        </div>
+                        <div class="buttons">
+                            <a class="show-tooltip" href="#" title="Take Picture"><i class="icon-camera"></i></a>
+                            <a class="show-tooltip" href="#" title="Attach File"><i class="icon-paper-clip"></i></a>
+                            <button type="submit" class="btn btn-primary"><i class="icon-share-alt"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="span5">
+        <div class="box box-green">
+            <div class="box-title">
+                <h3><i class="icon-check"></i> Todo List</h3>
+                <div class="box-tool">
+                    <a data-action="collapse" href="#"><i class="icon-chevron-up"></i></a>
+                    <a data-action="close" href="#"><i class="icon-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+                <ul class="todo-list">
+                    <li>
+                        <div class="todo-desc">
+                            <p><a href="#">Fix some bugs</a></p>
+                        </div>
+                        <div class="todo-actions">
+                            <span class="label label-important">Today</span>
+                            <a class="show-tooltip" href="#" title="It's done"><i class="icon-ok"></i></a>
+                            <a class="show-tooltip" href="#" title="Remove"><i class="icon-remove"></i></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="todo-desc">
+                            <p>Add new product's description post</p>
+                        </div>
+                        <div class="todo-actions">
+                            <span class="label label-important">Today</span>
+                            <a class="show-tooltip" href="#" title="It's done"><i class="icon-ok"></i></a>
+                            <a class="show-tooltip" href="#" title="Remove"><i class="icon-remove"></i></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="todo-desc">
+                            <p><a href="#">Remove some posts</a></p>
+                        </div>
+                        <div class="todo-actions">
+                            <span class="label label-warning">Tommorow</span>
+                            <a class="show-tooltip" href="#" title="It's done"><i class="icon-ok"></i></a>
+                            <a class="show-tooltip" href="#" title="Remove"><i class="icon-remove"></i></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="todo-desc">
+                            <p>Shedule backups</p>
+                        </div>
+                        <div class="todo-actions">
+                            <span class="label label-success">This week</span>
+                            <a class="show-tooltip" href="#" title="It's done"><i class="icon-ok"></i></a>
+                            <a class="show-tooltip" href="#" title="Remove"><i class="icon-remove"></i></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="todo-desc">
+                            <p>Weekly sell report</p>
+                        </div>
+                        <div class="todo-actions">
+                            <span class="label label-success">This week</span>
+                            <a class="show-tooltip" href="#" title="It's done"><i class="icon-ok"></i></a>
+                            <a class="show-tooltip" href="#" title="Remove"><i class="icon-remove"></i></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="todo-desc">
+                            <p><a href="#">Hire developers</a></p>
+                        </div>
+                        <div class="todo-actions">
+                            <span class="label label-info">Next week</span>
+                            <a class="show-tooltip" href="#" title="It's done"><i class="icon-ok"></i></a>
+                            <a class="show-tooltip" href="#" title="Remove"><i class="icon-remove"></i></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="todo-desc">
+                            <p><a href="#">New frontend design</a></p>
+                        </div>
+                        <div class="todo-actions">
+                            <span class="label label-info">Next week</span>
+                            <a class="show-tooltip" href="#" title="It's done"><i class="icon-ok"></i></a>
+                            <a class="show-tooltip" href="#" title="Remove"><i class="icon-remove"></i></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>

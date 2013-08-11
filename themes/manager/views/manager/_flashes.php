@@ -1,18 +1,24 @@
-<?php if ($flashes = Yii::app()->user->getFlashes()): ?>
-<div class="messages">
-    <?php foreach ($flashes as $key => $val): ?>
-        <div id="message-<?php echo $key; ?>" class="message message-<?php echo $key; ?>">
-            <div class="image">
-                <img src="<?php echo $this->assetsUrl; ?>/resources/images/icons/<?php echo $key; ?>.png" height="32" />
-            </div>
-            <div class="text">
-                <h6><?php echo ucfirst($key); ?> Message</h6>
-                <span><?php echo $val; ?></span>
-            </div>
-            <div class="dismiss">
-                <a href="#message-<?php echo $key; ?>"></a>
-            </div>
-        </div>
-    <?php endforeach; ?>
+<?php
+if ($flashes = Yii::app()->user->getFlashes()):
+    foreach ($flashes as $key => $val):
+        $tipClass = '';
+        switch ($key):
+            case 'warning':
+                $tipClass = '';
+                break;
+            case 'success':
+            case 'info':
+            case 'error':
+                $tipClass = " alert-{$key}";
+                break;
+        endswitch;
+?>
+<div class="alert<?php echo $tipClass; ?>">
+    <button class="close" data-dismiss="alert">×</button>
+    <h4><?php echo ucfirst($key); ?>!</h4>
+    <p><?php echo $val; ?></p>
 </div>
-<?php endif; ?>
+<?php
+    endforeach;
+endif;
+?>

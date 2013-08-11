@@ -15,7 +15,7 @@ class CategoryController extends PController
         $record = array(
             'id' => 0,
             'sortnum' => Category::model()->getMaxSortnum(),
-            'max_level' => 2,
+            'max_level' => 1,
             'name' => '',
             'has_alter' => 1,
         );

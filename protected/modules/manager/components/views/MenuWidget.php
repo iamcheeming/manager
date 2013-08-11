@@ -1,70 +1,56 @@
-<?php
-$urlManager = Yii::app()->urlManager;
-
-$func = function ($rows) use (&$func) {
-    $count = count($rows);
-    $i = 0;
-    $last = false;
-    foreach ($rows as $item):
-        ++$i;
-        if ($i == $count) $last = true;
-        if ($item['has_sub']):
-            if ($last):
-                echo '<li class="collapsible last">';
-            else:
-                echo '<li class="collapsible">';
-            endif;
-            echo '<a href="javascript:;" class="collapsible minus">', $item['name'], '</a>',
-                '<ul id="whatever" class="expanded">';
-            if ($item['has_alter']):
-                echo '<li><a href="', Yii::app()->createUrl('manager/nav/index', array('pid' => $item['id'])), '">栏目管理</a></li>';
-            endif;
-            if (isset($item['_child']) && is_array($item['_child'])) $func($item['_child']);
-            echo '</ul></li>';
-        else:
-            if ($last):
-                echo '<li class="last">';
-            else:
-                echo '<li>';
-            endif;
-            echo '<a href="', Yii::app()->createUrl('manager/article/index', array('cid' => $item['id'])), '">', $item['name'], '</a></li>';
-        endif;
-    endforeach;
-};
-
-foreach ($rows as $row):
-?>
-<h6 id="h-menu-bar-<?php echo $row['id']; ?>" class="selected">
-    <a href="#bar-<?php echo $row['id']; ?>"><span><?php echo $row['name']; ?></span></a>
-</h6>
-<ul id="menu-bar-<?php echo $row['id']; ?>" class="opened">
-    <?php if ($row['has_alter']): ?>
+<ul class="nav nav-list">
     <li>
-        <a href="<?php echo $urlManager->createUrl('manager/nav/index', array('pid' => $row['id'])); ?>">栏目管理</a>
+        <form method="GET" class="search-form">
+        <span class="search-pan">
+            <button type="submit">
+                <i class="icon-search"></i>
+            </button>
+            <input type="text" name="search" placeholder="Search ..." autocomplete="off" />
+        </span>
+        </form>
     </li>
-    <?php endif; if (isset($row['_child'])) $func($row['_child']); ?>
-</ul>
-<?php endforeach; ?>
-
-<h6 id="h-menu-bar-100" class="selected">
-    <a href="#bar-100"><span>系统管理</span></a>
-</h6>
-<ul id="menu-bar-100" class="opened">
+    <li class="active">
+        <a href="<?php echo Yii::app()->urlManager->createUrl('manager/default/index'); ?>">
+            <i class="icon-dashboard"></i>
+            <span>Dashboard</span>
+        </a>
+    </li>
+    <?php foreach ($rows as $item): ?>
     <li>
-        <a href="<?php echo $urlManager->createUrl('manager/link/index'); ?>">友情链接</a>
+        <a href="javascript:;" class="dropdown-toggle">
+            <i class="icon-list"></i>
+            <span><?php echo $item['name']; ?></span>
+            <b class="arrow icon-angle-right"></b>
+        </a>
+        <ul class="submenu">
+            <li>
+                <a href="<?php echo Yii::app()->urlManager->createUrl('manager/nav/index', array('pid' => $item['id'])); ?>">栏目管理</a>
+            </li>
+            <?php if (isset($item['_child'])): foreach ($item['_child'] as $subItem): ?>
+            <li>
+                <a href="ui_general.html"><?php echo $subItem['name']; ?></a>
+            </li>
+            <?php endforeach; endif; ?>
+        </ul>
     </li>
-    <li class="last">
-        <a href="<?php echo $urlManager->createUrl('manager/admin/index'); ?>">管理员</a>
-    </li>
-</ul>
+    <?php endforeach; ?>
 
-<?php if (Yii::app()->user->id == -1): ?>
-<h6 id="h-menu-bar-101" class="selected">
-    <a href="#bar-101"><span>系统初始化</span></a>
-</h6>
-<ul id="menu-bar-101" class="opened">
-    <li class="last">
-        <a href="<?php echo $urlManager->createUrl('manager/category/index'); ?>">栏目分类</a>
+    <li>
+        <a href="javascript:;" class="dropdown-toggle">
+            <i class="icon-th"></i>
+            <span>系统设置</span>
+            <b class="arrow icon-angle-right"></b>
+        </a>
+        <ul class="submenu">
+            <li><a href="<?php echo Yii::app()->urlManager->createUrl('manager/admin/index'); ?>">管理员</a></li>
+            <li><a href="<?php echo Yii::app()->urlManager->createUrl('manager/link/index'); ?>">友情链接</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="<?php echo Yii::app()->urlManager->createUrl('manager/category/index'); ?>">
+            <i class="icon-file"></i>
+            <span>栏目初始化</span>
+        </a>
     </li>
 </ul>
-<?php endif; ?>
