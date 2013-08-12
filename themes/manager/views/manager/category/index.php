@@ -39,14 +39,14 @@
                     <tbody>
                     <?php foreach ($rows as $row): ?>
                     <tr>
-                        <td><?php echo $row->id; ?></td>
-                        <td><?php echo $row->sortnum; ?></td>
-                        <td><?php echo $row->name; ?></td>
-                        <td><?php echo $row->max_level; ?></td>
-                        <td><?php echo $row->has_alter ? 'Allow' : 'Deny'; ?></td>
+                        <td><?php echo $row['id']; ?></td>
+                        <td><?php echo $row['sortnum']; ?></td>
+                        <td><?php echo $row['name']; ?></td>
+                        <td><?php echo $row['max_level']; ?></td>
+                        <td><?php echo $row['has_alter'] ? 'Allow' : 'Deny'; ?></td>
                         <td>
-                            <a class="btn btn-primary btn-small show-tooltip" href="<?php echo $this->createUrl('edit', array('id' => $row->id)); ?>" data-original-title="Edit"><i class="icon-edit"></i></a>
-                            <a class="btn btn-danger btn-small show-tooltip" href="<?php echo $this->createUrl('del', array('id' => $row->id)); ?>" data-original-title="Delete"><i class="icon-trash"></i></a>
+                            <a class="btn btn-primary btn-small show-tooltip" href="<?php echo $this->createUrl('edit', array('id' => $row['id'])); ?>" data-original-title="Edit"><i class="icon-edit"></i></a>
+                            <a class="btn btn-danger btn-small show-tooltip" href="<?php echo $this->createUrl('del', array('id' => $row['id'])); ?>" data-original-title="Delete"><i class="icon-trash"></i></a>
                         </td>
                     </tr>
                     <?php endforeach; ?>

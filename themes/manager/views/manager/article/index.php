@@ -1,62 +1,70 @@
-<div class="box">
-    <div class="title">
-        <h5>"<?php echo $category['name']; ?>" 信息列表</h5>
-        <ul class="links">
-            <li><a href="<?php echo $this->createUrl('add', array('cid' => $category['id'])); ?>">添加信息</a></li>
-        </ul>
+<div class="page-title">
+    <div>
+        <h1><i class="icon-file-alt"></i>"<?php echo $category['name']; ?>" 信息列表</h1>
     </div>
+</div>
+<div id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-home"></i>Home
+            <span class="divider"><i class="icon-angle-right"></i></span>
+        </li>
+        <li class="active">信息列表</li>
+    </ul>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="box">
+            <div class="box-title">
+                <h3><i class="icon-table"></i>信息列表</h3>
+            </div>
+            <div class="box-content">
 
-    <?php $this->renderPartial('../_flashes'); ?>
+                <?php $this->renderPartial('../_flashes'); ?>
 
-    <div class="table">
-        <form action="<?php echo $this->createUrl('batch'); ?>" method="post" id="form1">
-            <table>
-                <thead>
-                <tr>
-                    <th></th>
-                    <th>序号</th>
-                    <th>标题</th>
-                    <th>图片</th>
-                    <th>外链</th>
-                    <th>状态</th>
-                    <th>添加时间</th>
-                    <th class="last">管理</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php $articleStatus = Yii::app()->params['article_status']; foreach ($rows as $row): ?>
-                <tr>
-                    <td class="selected"><input type="checkbox" name="ids[]" value="<?php echo $row['id']; ?>" /></td>
-                    <td class="category"><?php echo $row['sortnum']; ?></td>
-                    <td class="center"><?php echo $row['title']; ?></td>
-                    <td class="w8 center"><?php echo empty($row['pic']) ? '' : '图'; ?></td>
-                    <td class="w8 center"><?php echo empty($row['link']) ? '' : '链'; ?></td>
-                    <td class="w8 center"><?php echo $articleStatus[$row['status']]; ?></td>
-                    <td class="w12 center"><?php echo $row['created_time']; ?></td>
-                    <td class="w12 center last">
-                        <a href="<?php echo $this->createUrl('edit', array('id' => $row['id'])); ?>">编辑</a>
-                        <a href="<?php echo $this->createUrl('del', array('id' => $row['id'])); ?>">删除</a>
-                    </td>
-                </tr>
-                <?php endforeach; ?>
-                </tbody>
-                <?php if ($rows): ?>
-                <thead>
-                <tr>
-                    <th colspan="8" class="last" style="text-align: left; padding: 10px 10px 10px 2px;">
-                        <input type="checkbox" class="checkall" /> 全选
-                        <span style="float: right; display: block;">
-                            <input type="button" id="batch-button" value="删除" />
-                        </span>
-                    </th>
-                </tr>
-                </thead>
-                <?php endif; ?>
-            </table>
+                <div class="btn-toolbar">
+                    <a href="<?php echo $this->createUrl('add', array('cid' => $category['id'])); ?>" class="btn btn-primary">添加信息</a>
+                    <a href="javascript:;" id="batch-button" class="btn btn-primary">批量删除</a>
+                </div>
+                <form id="form1" action="<?php echo $this->createUrl('batch'); ?>" method="post">
+                <table class="table table-advance">
+                    <thead>
+                    <tr>
+                        <th style="width:18px"><input type="checkbox"></th>
+                        <th>序号</th>
+                        <th>标题</th>
+                        <th>图片</th>
+                        <th>外链</th>
+                        <th>状态</th>
+                        <th>添加时间</th>
+                        <th style="width: 90px">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($rows as $row): ?>
+                        <tr>
+                            <td><input type="checkbox" name="ids[]" value="<?php echo $row['id']; ?>" /></td>
+                            <td><?php echo $row['sortnum']; ?></td>
+                            <td><?php echo $row['title']; ?></td>
+                            <td><?php echo empty($row['pic']) ? '' : '图'; ?></td>
+                            <td><?php echo empty($row['link']) ? '' : '链'; ?></td>
+                            <td><?php echo $articleStatus[$row['status']]; ?></td>
+                            <td><?php echo $row['created_time']; ?></td>
+                            <td>
+                                <div class="btn-group">
+                                    <a class="btn btn-small show-tooltip" href="<?php echo $this->createUrl('edit', array('id' => $row['id'])); ?>" data-original-title="Edit"><i class="icon-edit"></i></a>
+                                    <a class="btn btn-small btn-danger show-tooltip" href="<?php echo $this->createUrl('del', array('id' => $row['id'])); ?>" data-original-title="Delete"><i class="icon-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
+                </form>
+                <div class="pagination text-center"><?php echo $pagination; ?></div>
 
-            <?php echo $pagination; ?>
-
-        </form>
+            </div>
+        </div>
     </div>
 </div>
 <script>

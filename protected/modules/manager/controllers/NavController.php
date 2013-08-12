@@ -49,6 +49,9 @@ class NavController extends PController
             $this->redirect(Yii::app()->request->urlReferrer);
         }
         $record = Category::model()->findByPk($id);
+        if (!$record) {
+            $this->redirect(Yii::app()->request->urlReferrer);
+        }
         $this->render('form', array('record' => $record));
     }
 
@@ -89,13 +92,14 @@ class NavController extends PController
         } else {
             $model = new Category();
             $model->pid = $pid;
+            $model->pic = '';
+            $model->intro = '';
             if ($parent_model->route) {
                 $model->route = "{$parent_model->route}{$pid},";
             } else {
                 $model->route = "{$pid},";
             }
-            $model->pic = '';
-            $model->intro = '';
+            $model->level = $parent_model->level + 1;
             $model->has_alter = 1;
         }
         $model->sortnum = $sortnum;

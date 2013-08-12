@@ -1,6 +1,6 @@
 <?php $this->beginContent('webroot.themes.manager.views.layouts.main'); ?>
 <div class="container-fluid" id="main-container">
-    <div id="sidebar" class="nav-collapse">
+    <div id="sidebar" class="nav-collapse sidebar-fixed">
 
         <?php $this->widget('MenuWidget'); ?>
 

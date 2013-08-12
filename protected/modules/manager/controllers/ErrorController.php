@@ -7,7 +7,7 @@ class ErrorController extends PController
             if (Yii::app()->request->isAjaxRequest) {
                 echo $error['message'];
             } else {
-                $this->render('index', $error);
+                $this->renderPartial('index', $error);
             }
         }
     }

@@ -8,6 +8,7 @@ class MenuWidget extends CWidget
         foreach ($rows as $item) {
             $temp[$item->id] = $item->getAttributes();
         }
+        Yii::app()->controller->module->setParams(array('categories' => $temp));
         foreach ($temp as $item) {
             $temp[$item['pid']]['_child'][$item['id']] = &$temp[$item['id']];
         }

@@ -53,9 +53,10 @@ class CategoryController extends PController
         } else {
             $model = new Category();
             $model->pid = 0;
-            $model->route = '';
             $model->pic = '';
             $model->intro = '';
+            $model->route = '';
+            $model->level = 1;
             $model->has_sub = 1;
         }
         $model->sortnum = $sortnum;

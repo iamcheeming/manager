@@ -1,25 +1,38 @@
-<div class="box box-left box-padding ui-tabs ui-widget ui-widget-content ui-corner-all">
-    <div class="title">
-        <h5>友情链接</h5>
+<div class="page-title">
+    <div>
+        <h1><i class="icon-file-alt"></i>系统设置</h1>
     </div>
-    <div id="box-left-forms" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
-        <form method="post">
-            <div class="form">
-                <div class="fields">
-                    <div class="field">
-                        <div class="label label-textarea">
-                            <label>一行一个: 参考例子 google|https://www.google.com</label>
-                        </div>
-                        <div class="textarea">
-                            <textarea rows="50" cols="8" name="content"></textarea>
-                        </div>
-                    </div>
-                    <div class="buttons">
-                        <input type="submit" value="Submit" name="submit" class="ui-button ui-widget ui-state-default ui-corner-all" role="button" aria-disabled="false">
-                        <input type="reset" value="Reset" name="reset" class="ui-button ui-widget ui-state-default ui-corner-all" role="button" aria-disabled="false">
-                    </div>
-                </div>
+</div>
+<div id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-home"></i>Home
+            <span class="divider"><i class="icon-angle-right"></i></span>
+        </li>
+        <li class="active">友情链接</li>
+    </ul>
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="box">
+            <div class="box-title">
+                <h3><i class="icon-reorder"></i>友情链接</h3>
             </div>
-        </form>
+            <div class="box-content">
+
+                <?php $this->renderPartial('../_flashes'); ?>
+
+                <form action="#" class="form-horizontal" method="post">
+                    <div class="control-group">
+                        <p>一行一个链接，名称和链接中间用竖线隔开。例如：百度|http://www.baidu.com</p>
+                        <textarea class="input-xxlarge" name="link" rows="15" style="font-size: 16px;"><?php echo $link; ?></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary"><i class="icon-ok"></i> Save</button>
+                        <button type="button" class="btn">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>

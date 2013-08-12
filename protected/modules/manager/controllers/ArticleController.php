@@ -11,11 +11,29 @@ class ArticleController extends PController
         }
         $pageNo = $request->getQuery('page', 1);
         $pageSize = 20;
-        $rows = Article::model()->findAllByAttributes(array('category_id' => $cid),
-            array('order' => 'sortnum desc', 'limit' => $pageSize, 'offset' => ($pageNo - 1) * $pageSize));
         $totalNum = Article::model()->countByAttributes(array('category_id' => $cid));
-        $pagination = Helper::pagination($totalNum, $pageNo, $pageSize);
-        $this->render('index', array('category' => $category, 'rows' => $rows, 'pagination' => $pagination));
+        $rows = array();
+        $pagination = '';
+        if ($totalNum > 0) {
+            if ($totalNum < ($pageNo - 1) * $pageSize + 1) {
+                $pageNo = ceil($totalNum / $pageSize);
+            }
+            $rows = Article::model()->findAllByAttributes(array('category_id' => $cid), array(
+                'order' => 'sortnum desc',
+                'limit' => $pageSize,
+                'offset' => ($pageNo - 1) * $pageSize,
+            ));
+            if ($totalNum > $pageSize) {
+                $pagination = Helper::pagination($totalNum, $pageNo, $pageSize);
+            }
+        }
+
+        $this->render('index', array(
+            'category' => $category,
+            'articleStatus' => Yii::app()->params['article_status'],
+            'rows' => $rows,
+            'pagination' => $pagination
+        ));
     }
 
     public function actionAdd()
@@ -34,9 +52,14 @@ class ArticleController extends PController
         $record->pic = '';
         $record->status = 2;
         $record->content = '';
-        Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl
-            . '/tinymce/plugins/moxiemanager/js/moxman.loader.min.js', CClientScript::POS_BEGIN);
-        $this->render('form', array('category' => $category, 'record' => $record));
+        Yii::app()->clientScript
+            ->registerScriptFile(Yii::app()->baseUrl . '/tinymce/tinymce.min.js', CClientScript::POS_BEGIN)
+            ->registerScriptFile(Yii::app()->baseUrl . '/tinymce/plugins/moxiemanager/js/moxman.loader.min.js', CClientScript::POS_BEGIN);
+        $this->render('form', array(
+            'category' => $category,
+            'articleStatus' => Yii::app()->params['article_status'],
+            'record' => $record,
+        ));
     }
 
     public function actionEdit()
@@ -46,7 +69,13 @@ class ArticleController extends PController
             $this->redirect(Yii::app()->request->urlReferrer);
         }
         $record = Article::model()->findByPk($id);
-        $this->render('form', array('record' => $record));
+        Yii::app()->clientScript
+            ->registerScriptFile(Yii::app()->baseUrl . '/tinymce/tinymce.min.js', CClientScript::POS_BEGIN)
+            ->registerScriptFile(Yii::app()->baseUrl . '/tinymce/plugins/moxiemanager/js/moxman.loader.min.js', CClientScript::POS_BEGIN);
+        $this->render('form', array(
+            'articleStatus' => Yii::app()->params['article_status'],
+            'record' => $record,
+        ));
     }
 
     public function actionForm()

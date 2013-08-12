@@ -31,7 +31,7 @@ class AdminController extends PController
     public function actionForm()
     {
         if (!Yii::app()->request->isPostRequest) {
-            Yii::app()->user->setFlash('error', '错误的请求方式');
+            Yii::app()->user->setFlash('error', '无效的请求');
             $this->redirect(Yii::app()->request->urlReferrer);
         }
         $request = Yii::app()->request;
@@ -72,7 +72,7 @@ class AdminController extends PController
     {
         $id = Yii::app()->request->getQuery('id');
         if ($id < 1) {
-            Yii::app()->user->setFlash('error', '错误的管理员id');
+            Yii::app()->user->setFlash('error', '无效的管理员');
             $this->redirect(array('index'));
         }
         if ($id == 1) {
