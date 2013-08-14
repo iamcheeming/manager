@@ -31,7 +31,7 @@ class DefaultController extends PController
         }
         $identity = new UserIdentity($username, $password);
         if ($identity->authenticate()) {
-            Yii::app()->user->login($identity, $remember ? 3600 * 8 : 0);
+            Yii::app()->user->login($identity, $remember ? 3600 * 4 : 0);
             $this->redirect(array('default/index'));
         }
         Yii::app()->user->setFlash('error', '用户名或密码不正确。');

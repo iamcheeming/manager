@@ -19,6 +19,15 @@ class ManagerModule extends CWebModule
                 'errorAction' => 'manager/error/index',
             ),
         ));
+
+        // 分类列表
+        $categories = Category::model()->findAll(array('order' => 'sortnum asc'));
+        $temp = array();
+        foreach ($categories as $item) {
+            $temp[$item->id] = $item->getAttributes();
+        }
+        $this->setParams(array('categories' => $temp));
+        unset($categories, $temp);
     }
 
     public function beforeControllerAction($controller, $action)

@@ -3,17 +3,24 @@ class MenuWidget extends CWidget
 {
     public function run()
     {
-        $rows = Category::model()->findAll(array('order' => 'sortnum asc'));
-        $temp = array();
-        foreach ($rows as $item) {
-            $temp[$item->id] = $item->getAttributes();
+        $pid = Yii::app()->request->getQuery('pid', 0);
+        $cid = Yii::app()->request->getQuery('cid', 0);
+        $controller = Yii::app()->controller->id;
+        $action = Yii::app()->controller->action->id;
+        $categories = Yii::app()->controller->module->params->categories;
+        if ($pid && isset($categories[$pid])) $pid = $categories[$pid];
+        if ($cid && isset($categories[$cid])) $cid = $categories[$cid];
+        foreach ($categories as $item) {
+            $categories[$item['pid']]['_child'][$item['id']] = &$categories[$item['id']];
         }
-        Yii::app()->controller->module->setParams(array('categories' => $temp));
-        foreach ($temp as $item) {
-            $temp[$item['pid']]['_child'][$item['id']] = &$temp[$item['id']];
-        }
-        $rows = isset($temp[0]['_child']) ? $temp[0]['_child'] : array();
-        unset($temp);
-        $this->render('MenuWidget', array('rows' => $rows));
+        $categories = isset($categories[0]['_child']) ? $categories[0]['_child'] : array();
+
+        $this->render('MenuWidget', array(
+            'pid' => $pid,
+            'cid' => $cid,
+            'controller' => $controller,
+            'action' => $action,
+            'rows' => $categories,
+        ));
     }
 }
